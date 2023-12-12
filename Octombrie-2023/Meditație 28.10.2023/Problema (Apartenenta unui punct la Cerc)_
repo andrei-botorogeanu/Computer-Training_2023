@@ -1,0 +1,58 @@
+Problema (Apartenenta unui punct la Cerc):
+------------------------------------------
+
+Se citesc de la intrare n cercuri, date fiecare prin coordonatele centrului si raza ca numere reale ce se incadreaza in tipul standard float si un punct in plan. Decideti caruia dintre discurile cercurilor ii apartine punctul dat.
+
+
+solutie in pseudocod:
+
+#include <iostream>
+#define sqr(x) ((x)*(x))
+
+typedef struct Point {
+	
+	  float x, 
+	        y;
+} Point
+
+float computeDistance(Point p1, Point p2) {
+
+	 return sqrt( (p2.x - p1.x)*(p2.x - p1.x) + sqr(p2.y - p1.y))
+}
+
+
+bool apartine(Cerc C, Point p) {
+
+	      if(computeDistance(p, C.O) < C.R) {
+	             return True;
+	      }  else {
+	             return False
+	      }
+}
+
+struct Circle {
+
+      Point O;
+      float raza;
+}
+
+int main() {
+	
+	//declaram un array de cercuri
+	Circle vec[100];
+
+    //citim numarul de cercuri in variabila N
+	N = numarul de cercuri
+
+for de la i = 1 pana la N
+
+       //citim pe rand fiecare Cerc
+       citire_cerc()
+
+for de la i = 1 pana la N
+
+daca apartine(c[i], punct) {
+	afisare()
+}
+
+}

@@ -1,0 +1,50 @@
+Divide Et Impera (Paradigma de programare)
+-----------------------------------------
+
+Metoda Divide et impera este o metoda generala de elaborare a algoritmilor si se bazeaza pe 
+un principiu simplu: descompunem problema in subprobleme, pe care, la randul lor, pentru a
+le rezolva, le descompunem in subprobleme si asa mai departe; Acest procedeu este recursiv, 
+pana cand subproblemele se incadreaza intr-un caz de baza (admit rezolvare imediata) si le rezolvam corespunzator. 
+
+Etapele rezolvarii unei probleme prin aceasta metoda sunt:
+
+1) descompunerea recursiva a problemei initiale in subprobleme independente, similare problemei
+initiale, de dimensiuni din ce in ce mai mici, pana cand subproblemel capata dimensiuni care permit
+o rezolvare simpla. 
+
+2) rezolvarea subproblemelor ale caror dimensiuni sunt cele mai mici;
+
+ 
+3) construirea solutiilor subproblemlor de dimensiuni din ce in ce mai mari prin combinarea solutiilor subproblemlor mai mic, pana cand vom obtine solutia problemei noastre (prin combinarea ultimelor subprobleme).
+
+
+Array = [77,        88,        101,           111, 200,  400]
+ 
+        first_index         middle_index                 last_index
+
+        (Daca KEY se afla in a doua jumatate a intervalului, atunci first_index devine 
+        middle_index+1)
+        apelam functia binary_search(arr, key, middle_index+1, last)
+
+        luam mijlocul (3+5)/2
+
+        cercetam daca KEY > array[mijloc]
+        Daca nu este mai mare , nu este mai mic, atunci se afla pe mijloc
+
+
+stanga, dreapta
+
+first_index = 0
+last_index = 5
+KEY = 200
+
+intervalul = [0, 5]
+
+mijloc = (0 + 5) / 2 = 5 / 2 = 2
+
+Cercetam daca KEY > Array[mijloc] ?
+
+daca DA: binary_search(mijloc + 1, last)
+altfel cercetam daca KEY < Array[mijloc - 1]
+alfel return mijloc
+

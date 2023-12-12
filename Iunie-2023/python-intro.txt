@@ -1,0 +1,46 @@
+oem@ironman:~$ python3
+Python 3.8.10 (default, Jun  2 2021, 10:49:15) 
+[GCC 10.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = 1
+>>> b = "ABC"
+>>> c = 2.3
+>>> d = True
+>>> d
+True
+>>> type(a)
+<class 'int'>
+>>> type(b)
+<class 'str'>
+>>> type(c)
+<class 'float'>
+>>> type(d)
+<class 'bool'>
+>>> python = "Primitive DataType""
+  File "<stdin>", line 1
+    python = "Primitive DataType""
+                                 ^
+SyntaxError: EOL while scanning string literal
+>>> python = "Primitive DataType"
+>>> print(python)
+Primitive DataType
+>>> a = 2
+>>> print(a)
+2
+>>> arr = [1,2,3,4,5,6,7,8,9]
+>>> print(arr)
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> arr.append(4444)
+>>> arr
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 4444]
+>>> not True
+False
+>>> not false
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'false' is not defined
+>>> not False
+True
+>>> 
+
+

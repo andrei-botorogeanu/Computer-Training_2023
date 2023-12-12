@@ -1,0 +1,60 @@
+Trei Puncte Coliniare
+---------------------
+
+P1(x1,y1)
+P2(x2,y2)
+P3(x3,y3)
+
+Calculam aria. daca Aria este zero, atunci cele trei puncte sunt coliniare.
+
+Regula lui Sarrus:
+-----------------
+
+
+ x1 y1 1
+ x2 y2 1
+ x3 y3 1
+ -------------
+ x1 y1 1
+ x2 y2 1
+ -------------
+
+  => x1 y2 1 + x2 y3 1 + x3 y1 1 - y2 x3 - y3 x1 - y1 x2 =>
+
+  x1 y2 + x2 y3 + x3 y1 - y2 x3 - y3 x1 - y1 x2 =>
+
+   x2 y3 - y2 x3 =>
+
+  => x1 (y2 - y3) - y1 (x2 - x3) + x2 y3 - x3 y2 = 0
+
+  puncte Coliniare
+  altfel
+  nu sunt coliniare
+
+  typedef struct Point {
+
+       float x, //abscisa
+             y; //ordonata
+  }TPoint
+
+int aria(TPoint P1, TPoint P2, TPoint P3) {
+
+     return (P1.x * (P2.y - P3.y) - P1.y * (P2.x - P3.x) + P2.x * P3.y - P3.x * P2.y)
+}
+
+if( aria() == 0 ) cout<<"Punctele sunt coliniare!";
+ else
+                  cout<<"Punctele nu sunt coliniare";
+
+int main() {
+
+TPoint P[3];
+
+    for(int i = 0; i < 3; ++i) {
+      cin>>P[i].x>>P[i].y;
+    }
+
+    f( aria( P[0], P[1], P[2] ) == 0) cout<<"Punctele sunt coliniare!";
+     else
+                                  cout<<"Punctele nu sunt coliniare";
+}

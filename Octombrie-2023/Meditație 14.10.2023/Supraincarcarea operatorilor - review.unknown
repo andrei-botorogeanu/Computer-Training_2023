@@ -1,0 +1,267 @@
+Supraincarcarea operatorilor
+----------------------------
+
+
+void bubblesort(Complex *p, int n) {
+	
+	int finished = 0, swapped;
+
+    while(!finished) {
+
+           for(int i = 0; i < n - 1; ++i) {
+
+                   if(p[i].module() < p[i+1].module()) {
+
+                      //facem swap
+                      Complex aux = p[i];
+                      p[i] = p[i+1]
+                      p[i+1] = aux;
+                      swapped = 1;
+                   }
+
+           if(swapped) n--; else finished = 1;        
+          
+    }
+
+}
+
+//declaram un sir de numere complexe
+Complex Arr[100];
+
+//[arr1,arr2,arr3,arr4,....,arr100];
+
+//fiecare componenta reprezinta un numar complex
+
+int n
+
+cout<<"Citim numarul de numere complexe N = "
+cin>>n;
+
+for(int i = 0; i < n; ++i) {
+	
+  cin>>real>>imag	
+
+  Arr[i].set(real, imag);
+};
+
+
+for(int i = 0; i < n; ++i) {
+
+	arr[i].display();
+}
+
+bubblesort(arr, n)
+
+//numerele complexe sortate dupa modul (radical(real*real + imag*imag))
+
+for(int i = 0; i < n; ++i) {
+	arr[i].display();
+}
+
+
+class Complex {
+	   
+         
+      public:
+
+      //constructor fara parametri
+      Complex(){real = 0; imag = 0;}
+
+      //constructor cu 2 parametri
+      Complex(double real, double imag) {
+              this->real = real;
+              this->imag = imag;
+      }
+
+      void set(double real, double imag) {
+
+           this->real = real;
+           this->imag = imag; 
+      }
+
+      void display() {
+           cout<<real;
+           if(imag>0) cout<<"+";
+           cout<<imag<<"i";
+           cout<<"\n";
+      }
+
+      double module() {
+          return sqrt(real*real + imag * imag);
+      }
+
+      Complex operator+(float x, Complex&z) {
+
+              return Complex(x+z.real, z.imag);
+      }
+
+      Complex operator+(Complex&z, float x) {
+
+              return Complex(x+z.real, z.imag);
+      }
+
+      private:
+      double real, 
+             imag;
+
+};
+
+
+Complex z2(5.6, 9.4);
+
+
+Complex z1;
+
+cin>>real>>imag;
+
+z1.set(real,imag)
+
+//am declarat un sir de numere complexe
+Complex arr[ 1000 ];
+
+Complex numar_complex(9,4);
+
+cin>>real>>imag;
+
+
+arr[i].set(real, imag);
+
+
+arr[0] = primul numar complex
+arr[1] = al doilea numar complex
+arr[2] = al treilea numar complex
+......------------------------
+arr[i] = al i-lea numar complex
+
+
+arr[0].display()
+
+for de la i = 0 pana la n:
+       arr[i].display()
+
+
+
+arr[0].set(1,1);
+
+
+arr[0].set(7,7);
+
+
+//apelam constructorul cu 2 parametri
+Complex Z(5,5);
+(real = 5
+imag = 4)
+
+//apelam constructorul fara niciun paramtru
+Complex Z;
+real 0;
+imag = 0
+
+
+Z.set(7,8)
+
+
+1 + Z = 1 + 0i + 7 + 8i = 8 + 8i
+
+Z + 1 = 7 + 8i + 1 + 0i = 8 + 8i
+
+
+Complex z1(2,3), z2(7,8);
+z = z1 + z2;
+z = z1 / z2;
+z = z1 * z2;
+z = z1 - z2;
+z = 1 + z1;
+z = z1 + 8
+
+cout<<z;
+
+Vector de vector
+
+Matrice = [ [1,2,3], 
+            [2,3,4], 
+            [4,5,6], 
+            [1,1,1]
+          ]
+
+          matrix[0][0] = 1
+          matrix[0][1] = 2
+
+
+          vec = [1,2,3,4]
+          vec.push_back(-999)
+
+          vec = [1,2,3,4,-999]
+
+
+Matrice
+-------
+
+Avem 2 variante:
+
+1) int matrix[ROWS][COLS];
+
+matrix[0][0] = X
+
+2) vector< vector<int> > matrix
+push_back()
+
+-----------------------
+
+#define ROWS 3
+#define COLS 3
+
+const int ROWS = 3;
+const int COLS = 3;
+
+matrix = [ 
+           [1,2,3], 
+           [4,5,6], 
+           [7,8,9] 
+         ]
+
+matrix2 = [
+            [x,y,z],
+            [x,y,z],
+            [x,y,z]            
+          ]
+
+[
+  [x,y,z]
+]
+
+[
+[1,2,3]
+]
+
+o linie cu 3 coloane
+(1,2,3)
+
+ROWS = 3
+COLS = 3
+
+for(int i = 0; i < ROWS; ++i) {
+	
+	  vector<int> aux;
+
+	  for(int j = 0; j < COLS; ++j) {
+	     //citim un element
+	     cin>>element;
+	     aux.push_back(element);
+	  }
+
+      matrix.push_back( aux )
+
+}
+
+ROWS = matrix.size()
+
+COLS = matrix[i].size()
+
+for(int i = 0; i < ROWS; ++i) {
+	
+	  for(j = 0; j < COLS; ++j) {
+
+	      cout<<matrix[i][j]<<" ";
+	  }
+}

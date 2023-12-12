@@ -1,0 +1,73 @@
+Tehnica Greedy
+--------------
+
+1. Backtracking (permutari, combinari, aranjamente, produs cartezian, etc...)
+
+2. Divide Et Impera (pentru cautari rapide in vectori sortati, sortare rapida)
+
+3. Greedy (ai o multime de n numere reale. se cere o submultime a sa, cu un numar maxim de elemente, astfel incat suma elementelor sale sa fie maxima.)
+
+4. Programare Dinamica (Exemplu: ai o multime, o matrice si vrei sa afli care este suma cea mai mare pornind de la o anumita linie si coloana)
+
+1.Aplicatie:
+
+Modalitate de plata:
+
+Se considera N (N<=1000) tipuri de bancnote, de valori diferite, din fiecare existand un numar nelimitat de bucati. Sa se determine o modalitate de plata a valorii S, folosind un numar minim de bancnote.
+
+Input:
+N = 5, S = 100
+3, 15, 1, 5, 2
+
+Output:
+
+6 * 15
+2 * 5
+
+Folosim tehnica Greedy. Nu folosim Backtracking, Divide Et Impera, ori Programare Dinamica
+
+
+Generalitati:
+-------------
+
+Se considera o multime A. Se cere o submultime a sa astfel incat sa fie indeplinite anumite conditii
+(acestea difera de la o problema la alta). Uneori , pentru astfel de probleme, se poate folosi metoda Greedy.
+
+Structura generala a unei aplicatii Greedy este data mai jos:
+
+
+Sol ---> Multimea Vida (0)
+
+Repeta
+
+    Alege x apartine lui A(multime)
+    Daca este posibil atunci Sol <--- Sol + 1
+
+          Pana cand am obtinut solutia
+
+Afiseaza Sol
+
+Solutia este initial vida si , pe rand, se alege , dintre elemetele multimii A, element cu element, pana cand se obtine solutia ceruta.
+
+
+Observatii:
+----------
+
+- De regula, metoda Greedy rezolva problema in complexitate O(n^k)
+
+- datorita faptutului ca solutia este construita pas cu pas, fara un mecanism de revenire ca la backtracking, metoda se numeste Greedy (lacom)
+
+- Desi s-a prezentat forma generala a metodei, ea nu poate fi standardizata (adica sa avem o unica rutina pe care s-o aplicam la orice problema)
+
+- exista destul de putine probleme pentru care se poate aplica acesta metoda
+
+- metoda Greedy se aplica in doua cazuri:
+
+  a) atunci cand stim sigur ca se ajunge la solutia dorita
+  b) atunci cand nu dispunem de o solutie in timp polinomial, dar prin Greedy obtinem o solutie acceptabila, nu neaparat optima.
+
+
+
+
+
+

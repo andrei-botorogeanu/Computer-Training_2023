@@ -1,0 +1,57 @@
+Aproximarea lui PI:
+------------------ 
+Sirul Taylor:
+
+Metoda Leibniz
+
+1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13 ... (sirul este infinit) este convergent cu PI/4
+de unde rezulta ca PI se aproximeaza cu 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + 1/13)
+
+Metoda Monte Carlo:
+-------------------
+
+Patrat si un Cerc
+
+face raportul dintre aria cercului si aria patratului
+
+Pi * R*R   PI * R^2   PI
+-------- = -------- = --
+2*R*2*R     4 * R^2   4 
+
+Numarul de puncte generate in interiorul cercului     PI
+-------------------------------------------------   = --
+Numarul de puncte generate in interiorul patratului   4
+
+
+Pentru a-l aproxima pe PI => 4 * numarul de puncte generate in interioul cercului / numarul de puncte generate in patrat
+
+
+Folosim functia Random
+
+#include <math.h>
+
+double x = rand()%2
+
+double y = rand()%2
+
+for(int i = 0; i <= 10000;++i) x = random(), y = random()
+
+if x*x + y*y <= 1 {
+	
+	inseamna ca punctul se afla in interiorul cercului
+
+} alfel se afla in patrat
+
+
+Cercul(O,R) O(x,y)
+
+
+x*x + y*y <= 1
+ __________
+|          |
+|          | 
+|          |  
+|__________|
+
+
+ecuatia dreptei: ax + by + c = 0

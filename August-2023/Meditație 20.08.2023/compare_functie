@@ -1,0 +1,36 @@
+void compare(int a, int b) {
+
+     //arr[i], arr[i+1]
+
+	 return a - b > 0
+}
+
+//pointer catre functie
+void bubblesort(arr, void (*compare)(int,int)) {
+	
+    
+     int finished = 0;
+     int swapped;
+
+     while(!finished) {
+
+           swapped = 0
+
+           for(int i = 0; i < size - 1; i++) {
+
+              //compilatorul c++ va sti ca este un pointer catre functie
+               if(  compare(arr[i], arr[i+1]) ) {
+
+               //in loc sa scriu if(arr[i] > arr[i+1])
+
+                  swap(arr[i],arr[i+1]);
+
+                  swapped = 1
+               }
+           }
+
+           if(swapped == 1) size--;
+           else finished = 1;
+     }   
+
+}

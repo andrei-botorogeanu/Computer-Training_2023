@@ -1,0 +1,73 @@
+Triunghiul lui Pascal
+---------------------
+
+
+1 
+1  1
+1  2  1
+1  3  3  1
+1  4  6  4  1
+1  5  10 10 5  1
+1  6  15 20 15 6  1
+
+
+C(5,3) = 10
+
+
+Aplicam formula in Dynamic Programming
+
+C(n,k) = 1 daca k = 0 sau k = n
+
+C(n,k) = C(n-1, k-1) + C(n-1,k) 
+
+comb[0][0] = 1
+
+
+for(i = 1; i <= n; ++i) {
+	
+
+	for(j = 0; j <= i; j++) {
+
+
+	  if(j == 0 sau j == i) = Comb[i][j] = 1
+
+	  altfel
+
+	  comb[i][j] = comb[i-1][j-1] + comb[i-1][j]
+	}
+}
+
+
+cout<<comb[6][4]
+
+
+fact(6) / fact(2) * fact(2)
+
+
+Comb(6,4)  = 6! / 2! * 4!
+
+comb(1000, 30) = 
+
+daca avem k == n atunci res = 1
+daca k == 0 atunci res = 1
+
+aplicam formula recursiva:
+C(n,k) = C(n-1, k-1) + C(n-1,k) 
+
+
+comb(5,3) = comb(4,2) + comb(4,3) = 
+
+= comb(3,1) + comb(3,2) + comb(3,2) + comb(3,3) (va fi 1)
+
+= comb(2,0) + comb(2,1) + comb(2,2) + comb(2,1) + comb(2,2) + 1
+
+= 8 + 2 = 10
+
+comb(5,3) = 5! / (2! * 3!) = 20 / 2 = 10
+
+
+
+
+
+
+

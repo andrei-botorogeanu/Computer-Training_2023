@@ -1,0 +1,71 @@
+Recursivitatea
+--------------
+
+Recursivitatea este un mecanism general de elaborare a programelor si consta in posibilitatea
+ca un subprogram sa se autoapeleze.
+
+
+ Care este mecanismul prin care subprogramele  se pot autoapela? 
+
+ Pentru memorarea  parametrilor, subprogramele folosesc o zona de memorie numita STIVA (mai exact
+ aceasta zona se numeste SEGMENT de STIVA).
+
+ Memorarea parametrilor transmisi se face in ordinea in care acestia figurarea in antet: de la stanga la dreapta.
+
+ Pentru parametrii transmisi prin valoare, se memoreaza valoarea transmisa.
+
+ La apelul subprogramului se depun in stiva , in ordine, parametrii trasmisi. De asemenea, tot in stiva se rezerva spatiu pentru variabilele locale (cele declarate in subprogram).
+
+ In cazul in care subprogramul(functia noastra) se autoapleaza pe un al doilea nivel al stivei se depun din nou parametrii transmisi si se rezerva un nou spatiu pentru variabilele locale.
+
+void subprogram(int k, int v) {
+int a, b;
+a = 2;
+b = 3;
+
+ while(conditie) {
+     k = 1
+     v = 2
+     subprogram(k+1,v+1)      
+     #alte instructiuni
+}
+
+int factorial(int k) {
+    //variabila locala
+    //variabile a,,b,c,c,d,e,f,g,y;
+	int v = 5;
+	if(k == 1) return 1
+	else
+	d = v * k * (factorial(k-1))
+
+	//restul instructiunilor
+	a = a + 3
+	//instructiuni
+	return a	
+}
+
+factorial(3)
+factorial(2)
+factorial(3)
+
+
+//se executa celelalte instructiuni
+}
+
+#apelare subprogram: se creeaza in stiva un nivel: se depun valorile si spatiu pentru variabilele locale.
+subprogram(4,5)
+
+=> nou nivel in segmentul de stiva :(2,3) si spatiu pentru k si v (evalueaza)
+=> nou nivel in.... (3,4) si spatiu pentru variabilele locale k si v (evalueaza)
+=> nou nivel in.... (4,5) si spatiu pentru variabilele locale k si v (evalueaza)
+=> nou nivel in.... (5,6) si spatiu pentru variabilele locale k si v (evalueaza)
+=> nou nivel in.... (6,7) si spatiu pentru variabilele locale k si v (evalueaza)
+..................................................................  
+ajunge la conditia de terminare din while
+
+
+
+
+
+
+

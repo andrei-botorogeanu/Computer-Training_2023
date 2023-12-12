@@ -1,0 +1,39 @@
+Limbajul de programare Kotlin:
+-----------------------------
+
+Pentru compilare:
+
+kotlinc-jvm filename.kt
+
+In directorul se creeaza un fisier numit filenmeKt.class
+
+Exe:
+kotlin filenameKt
+
+Kotlin Variabile:
+
+var name = "Everest"
+//declarare cu var => variabila poate fi schimbata (atribuire)
+val name2 = "Annapurna"
+//declarare cu val => nu mai poti schimba valoare => eroare la compilare
+
+
+var name: String
+
+name = "Everest"
+
+var i: Int //integer; in c++ int i;
+
+val num:Double
+
+num = 34.56
+
+
+val letter:Char = 'A'
+
+#In Kotlin lucram cu Boolean, in c++ bool, in Python a = False sau True
+val myBoolean: Boolean = true //True si False , bool aux = true;
+# in Python a = True
+
+var numar_real:Float
+numar_real = 23.45;

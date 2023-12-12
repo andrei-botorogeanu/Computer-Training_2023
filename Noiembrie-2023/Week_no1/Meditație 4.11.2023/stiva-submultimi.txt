@@ -1,0 +1,99 @@
+Stiva
+-----
+
+Aplicatie: Generarea submultimilor unei multimi:
+
+S = {"xxx","yyy","zzz"}
+       1     2    3
+S = {x,y,z}
+
+S = {"Andrei","Valentin","Ciprian"}
+
+S = {23,45,67}
+
+Noi stim doar cardinalul multimii. N = 3 => 2^n submultimi
+
+Are 3 elemente
+
+N = 3
+
+folosim o structura de data
+
+Stack stiva(100)
+
+pasul 1: stiva.push( 1 ) //inseamna ca adaugam in stiva primul element
+
+        conditia de evaluat
+while {stiva nu este goala} executa:
+
+      -se tipareste continutul stivei      
+      - Write( stiva )
+      -print(endline)
+
+      daca topul stivei este mai mic decat N atunci 
+
+           stiva.push(top + 1)
+
+      altfel
+           stiva.pop()
+           Daca nu este goala stiva:
+                   top = top + 1
+
+Multimea in matematica este un concept abstract. 
+
+1 (Andrei) ("cube")
+1 2 (Andrei, Valentin) ("cube","piramida")
+1 2 3
+1 3
+2
+2 3
+3
+stiva goala
+se iese din while
+
+
+x 
+x y
+x y z
+x z
+y
+y z
+z
+
+
+
+1 (TOP)
+top < 3?
+DA
+push(top+1)
+1 2
+afisare
+2 < 3?
+DA
+push(top+1)
+1 2 3 
+top < 3?
+NU
+pop
+1 3
+afisare
+3 < 3?
+NU
+pop
+top = top + 1 adica 2
+afisare
+2 < 3?
+DA
+2 3
+3 < 3?
+NU
+pop
+top = top + 1 adica 3
+3 < 3?
+NU
+pop
+stiva devine GOALA
+
+
+
+

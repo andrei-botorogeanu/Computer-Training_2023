@@ -1,0 +1,48 @@
+
+
+Avem un triunghi:
+
+Triunghi[][]
+
+N = 9
+
+Triunghi[1][1] = 1
+Triunghi[2][1] = 2 Triunghi[2][2] = 4
+Triunghi[3][1] = 7 Triunghi[3][2] = 3 Triunghi[3][3] =  4
+
+---------------------------------------------------------
+
+Triunghi[9][1] = 8 Triunghi[9][2] = 9  Triunghi[9][3] = 1 .... Triunghi[9][9] = 7
+
+
+Alt_Triunghi[9][1] = 8
+Alt_Triunghi[9][2] = 9
+----------------------
+Alt_Triunghi[9][9] = 7
+
+
+Alt_triunghi[8][1] = Triunghi[8][1] + MAX(Alt_Triunghi[9][1], Alt_Triunghi[9][2])
+
+Alt_triunghi[8][2] = Triunghi[8][2] + MAX(Alt_Triunghi[9][1], Alt_Triunghi[9][2])
+
+1
+2 4
+7 3 4
+1 2 3 4 
+5 6 7 8 9
+6 7 8 9 0 9
+1 2 3 4 5 6 7
+5 6 7 8 9 0 9 1
+8 9 1 2 3 4 5 6 7
+
+
+Alt_triughi:
+
+SUMAMAX
+.
+.
+.
+14  15  9  11  2 3 4 5 56 
+8   9   1  2   3 4 5 6 7
+
+SUMA = Alt_triunghi[1][1]

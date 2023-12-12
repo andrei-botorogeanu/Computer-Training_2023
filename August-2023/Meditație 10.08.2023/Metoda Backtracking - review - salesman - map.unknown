@@ -1,0 +1,301 @@
+Metoda Backtracking
+-------------------
+
+Probleme clasice care se rezolva cu metoda backtracking.
+
+
+1. Problema comis-voiajorului (Salesman Problem).
+2. Problema colorarii hartilor.
+
+
+1. Un comis-voiajor trebuie sa viziteze un numar n de orase. Initial, acesta se afla intr-unul dintre ele notat 1. Salesman doreste sa nu treaca de doua ori prin acelasi oras, iar la intoarcere sa revina in orasul 1. Cunoscand legaturile existente intre orase, se cere sa se tipareasca toate drumurile posibile pe care le poate efectua comis-voiajorul.
+
+
+     ---   2 ------------ 3            
+--                            ---
+1             ---             4 
+--      
+              ---           --
+    ---     6---------------5
+
+Salesman are urmatoarele posibilitati de parcurgere:
+    1, 2, 3, 4, 5, 6, 1
+    1, 2, 5 ,4, 3, 6, 1
+    1, 6, 3, 4, 5, 2, 1
+    1, 6, 5, 4, 3, 2, 1
+
+
+    Legaturile existente intre orase sunt date de matrice Mat(n,m)
+
+    Elementele matricei mat pot fi 0 sau 1 (matricea este binara)
+
+               1 , daca exista drum intre orasele i si j
+    mat(i,j) = 
+               0 altfel
+
+
+mat = 0 0 0 0 0 0 0
+      0 0 1 0 0 0 1 
+      0 1
+      0
+      0
+      0
+
+      mat(i,j)
+
+      mat(0,0) mat(0,1) mat(0,2) mat(0,3) mat(0,4) mat(0,5) mat(0,6)
+      mat(1,0) mat(1,1) mat(1,2) mat(1,3) mat(1,4) mat(1,5) mat(1,6)
+      mat(2,0) mat(2,1) mat(2,2) mat(2,3) mat(2,4) mat(2,5) mat(2,6)
+      mat(3,0) mat(3,1) mat(3,2) mat(3,3) mat(3,4) mat(3,5) mat(3,6)
+      mat(4,0) mat(4,1) mat(4,2) mat(4,3) mat(4,4) mat(4,5) mat(4,6)
+      mat(5,0) mat(5,1) mat(5,2) mat(5,3) mat(5,4) mat(5,5) mat(5,6)
+      mat(6,0) mat(6,1) mat(6,2) mat(6,3) mat(6,4) mat(6,5) mat(6,6)
+
+
+      mat(0,0) mat(0,1) mat(0,2) mat(0,3) mat(0,4) mat(0,5) mat(0,6)
+      mat(1,0) 0        1        0        0        0        1
+      mat(2,0) 1        0        1        mat(2,4) mat(1,5) mat(1,6)
+      mat(3,0) mat(3,1) mat(3,2) mat(3,3) mat(3,4) mat(2,5) mat(2,6)
+      mat(4,0) mat(4,1) mat(4,2) mat(4,3) mat(4,4) mat(3,5) mat(3,6)
+      mat(5,0) mat(5,1) mat(5,2) mat(5,3) mat(5,4) mat(4,5) mat(4,6)
+      mat(6,0) mat(6,1) mat(6,2) mat(6,3) mat(6,4) mat(6,5) mat(6,6)
+
+      File.in   
+      0 1 1 1 1
+      0 1 0 0 1
+      1 1 1 1 1
+      0 1 1 1 1
+
+      for i = 1; i <= n; ++i
+
+          for j = 1; j <= i - 1; j++ 
+
+              cin>>mat[i][j] 
+
+              mat[j][i] = mat[i][j]
+
+         i = 1
+         j = 1
+         1<=0
+         i = 2
+         j = 1 j <= 2-1 adica 1 <= 1
+         mat[2][1] = ?
+         mat[1][2] = mat[2][1]
+
+         i = 3
+         j = 1
+
+         1 <= 3 - 1? 1 <= 2 da! atunci cin>>mat[3][1] 
+                                       mat[1][3] = mat[3][1]
+         2 <= 2 ? da cin>>mat[3][2]   
+         mat[2][3] = mat[3][2]
+
+
+         mat[1][]     
+
+mat[1][2] = 1
+
+mat[2][1]               
+
+
+2. Problema colorarii hartilor
+
+tara 1 are culoarea 1 (red)
+tara 2 are culoarea 2 (orange)
+tara 3 are culoarea 1  (red)
+tara 4 are culoarea 3  (blue)
+tara 5 are culoarea 4  (green)
+
+Am folosit 4 culori(red, orangem blue, green) ca sa coloram 5 tari din harta.
+
+
+1         4
+
+
+2   3  
+
+        5    
+
+tara 1 are frontiera comuna cu tarile 4 si 2
+tara 2 are frontiera comuna cu tarile 1, 3 si 4
+tara 3 are frontiera comuna cu tarile 2, 5
+
+Harta este furnizata cu ajutorul unei matrici mat(i,j)
+
+
+mat(i,j) = 1 daca tara i are frontiera comuna cu tara j
+           0 altfel(daca nu are frontiera)
+
+
+mat(1,1) mat(1,2) mat(1,3) mat(1,4) mat(1,5)
+mat(2,1) mat(2,2) mat(2,3) mat(2,4) mat(2,5)
+mat(3,1) mat(3,2) mat(3,3) mat(3,4) mat(3,5)
+mat(4,1) mat(4,2) mat(4,3) mat(4,4) mat(4,5)
+mat(5,1) mat(5,2) mat(5,3) mat(5,4) mat(5,5)
+
+
+0   1    0    1    0 
+1   0    1    0    1
+0   1    0    0    1
+1   1    0    0    1
+0   1    1    1    0
+
+
+Review:
+
+Aceasta metoda se foloseste in rezolvarea problemelor care indeplinesc simultan urmatoarele conditii:
+
+
+- solutia lor poate fi pusa sub forma unui vector S = (x1,x2,...xn) 
+
+cu x1 apartine lui A1, x2 apartine lui A2,....
+- multimile A1, A2, ...An sunt multimie finite iar elemente lor se afla intr-o relatie de ordine bine stabilita.
+
+- nu se dispune de o alta metoda de rezolvare mai rapida.
+
+
+Pentru problema comis-voiajorului o solutie ar fi urmatoarea parcurgere:
+
+Solutia = (1, 2, 3, 4, 5, 6, 1)
+
+
+stack[6] = 6
+stack[5] = 5 
+stack[4] = 4
+stack[3] = 3
+stack[2] = 2
+stack[1] = 1
+
+
+Stiva este o structura de data in care se efectueaza LIFO (last in first out)
+
+Coada este o structura de data care are proprietate FIFO (First in first out)
+
+   adaugi elemente
+
+4
+3
+2
+1
+   scoti 1, 2, 3, 4
+
+6
+5
+4
+3
+2
+1
+
+Pentru problema colorarii hartilor solutia este sub forma de vector:
+
+tara 1 are culoarea 1 (red)
+tara 2 are culoarea 2 (orange)
+tara 3 are culoarea 1  (red)
+tara 4 are culoarea 3  (blue)
+tara 5 are culoarea 4  (green)
+
+tara = (1, 2, 1, 3, 4)
+
+index: 1  2  3  4  5
+
+tara[1] are culoarea 1
+tara[2] are culoarea 2
+tara[3] are culoarea 1
+tara[4] are culoarea 3
+tara[5] are culoarea 4
+
+Structuri de date : Stiva si Coada
+
+
+
+Daca avem o stiva: S
+
+e
+d
+c
+b
+a
+
+adaugam pe rand elemente in stiva:a, b, c, d, e
+varful stivei va fi e
+scoatem e,d,c,b,a
+
+
+Daca avem o coada: C
+
+start
+||
+\/
+e
+d
+c
+b
+a
+---> end
+FIFO
+
+
+
+
+                   1
+
+matrix[ stack[level-1] ][ stack[level] ] sa fie 1 pentru ca ar trebui sa exista 
+            x                y
+                   sau
+            i                j 
+drum intre 
+
+matrix[i][j] = 1 daca exista drum de la i la j
+               0  daca nu exista drum de la i la j (altfel)    
+
+
+         5
+level:   4
+level-1: 3
+         2
+         1
+
+solutia: 1, 2, 3, 4, 5, 6
+
+
+
+2
+1
+
+matrix[ 2] [ 1 ] verifici daca este 1 sau 0, daca elementul din matrice este 1 adica exista drum intre 2 si 1, atunci consideram valid si mergem mai departe 
+
+1, 2, 5, 4, 5, 6
+
+
+Grafuri:
+--------
+
+pentru problema colorarii hartilor
+
+Graph = (V, E)
+
+V = multimea tarilor
+E = multimea conectivitatilor, multimea perechilor de tari cu frontiera comuna
+
+V = {1,2,3,4,5} => 5 tari
+E = {(1,2),(1,4),(2,3),(2,4),(3,5),(4,5)}
+
+Am reprezentat un GRAPH
+
+pentru problema salesman-ului
+
+G = (V, E)
+
+V = multimea oraselor
+E = multimea relatiilor intre orase
+
+V = {1,2,3,4,5} => 5 orase
+E = {(1,2),(1,4),(2,3),(2,4),(3,5),(4,5)}
+
+intre 1 si 2 avem un drum , putem circula cu masina intre 2 si 1
+intre 1 si 4 avem alt drum  ......
+
+
+
+
+

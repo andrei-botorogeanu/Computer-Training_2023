@@ -1,0 +1,161 @@
+OOP - Constructori si Destructori
+---------------------------------
+
+
+Definitie:
+
+Constructorul unei clase este o metoda speciala care are rolul de a permite declararea obiectelor de tipul clasei respective.
+
+Constructorii se clasifica astfel:
+
+1. constructor generat implicit
+2. constructor definit de programator
+
+1. constructorul generat implicit are urmatoarele caracteristici:
+
+- se genereaza automat in lipsa oricarui alt constructor. 
+
+- nu are parametrii formali
+
+- nu permite initializarea la declarare a obiectelor
+
+
+Exemplu:
+
+
+- class Fractie {
+	
+	    public:
+
+	    int numarator;
+	    int numitor;
+
+};
+
+
+int main() {
+
+  Fractie F1, F2;
+}
+
+//se creeaza doua instante ale clasei Fractie: F1 si F2
+
+//la declararea obiectelor F1 si F2 s-a apelat constructorul generat implicit, deoarece nu exista niciun alt constructor definit de programator.
+
+2. Constructor definit de programator
+
+a) Are intotdeauna numele clasei din care face parte
+
+b) Exista o functie care nu intoarce niciun rezultat dar, cu toate acestea, nu se trece in antet cuvantul void.
+
+c) Este o functie care poate sa aiba sau sa nu aiba parametrii. In cazul in care nu are parametrii, la declararea  unui obiect se apeleaza acesta nu cel generat implicit.
+
+d) Intr-o clasa pot fi definiti mai multi constructori. In acest caz, trebuie sa aiba in vedere tipul si numarul parametrilor pentru ca acestia fac diferentierile la declararea unui obiect.
+
+class Fractie {
+	
+
+     public:
+
+     int numarator, numitor;
+
+     //constructori
+
+     Fractie(int a, int b, int c) {
+
+     } 
+
+
+     Fractie() {
+
+         cout<<"Constructor fara params!";
+     }
+
+     void citeste() {
+
+        cin>>numarator;
+        cin>>numitor;
+     }
+
+     Fractie(int a, int b) {
+        numarator = a;
+        numitor = b;
+        cout<<"Constructor cu doi params"<<endl;
+     }
+
+     Fractie(int a) {
+        numarator = 1;
+        numitor = a;
+        cout<<"Constructor generat de programator cu un singur param!";
+     }
+
+}
+
+int main() {
+	
+	Fractie F1; //am creat un obiect
+
+	//cin>>F1.numarator;//7
+	//cin>>F1.numitor;//8
+
+	Fractie F2(7,8); //am creat alt obiect
+	Fractie F3(7); //am creat 
+
+    Fractie F4(1,2,3); 
+}
+
+
+Destructori
+-----------
+
+Destructorul unei clase este o metoda speciala care face operatiile legate de eliberarea memoriei ocupate de un obiect de tipul clsei respective atunci cand acesta nu mai este folosit.
+
+Clasificare:
+
+- destructor generat implicit
+- destructor definit de programator
+
+1) destructorul generat implicit:
+
+se genereaza automat in lipsa oricarui alt destructor. Astfel spus, se genereaza atunci cand programatorul nu a definit niciun destructor.
+
+
+class Fractie {
+	
+	  public:
+	  int a,b;
+
+	  Fractie(int x, int y) {
+	  a = x;
+	  b = y;
+	  }
+
+};
+
+
+int main() {
+	
+	 Fractie f;
+	 Fractie f2;
+
+	 //dupa ce se termina programul se apeleaza un destructor implicit
+}
+
+
+2) destructor generat de programator
+
+class Fractie {
+	
+	  public:
+	  int a,b;
+
+	  Fractie(int x, int y) {
+	  a = x;
+	  b = y;
+	  }
+
+	  ~Fractie() {
+	  cout<<"S-a distrus obiectul!";
+	  } 
+
+};

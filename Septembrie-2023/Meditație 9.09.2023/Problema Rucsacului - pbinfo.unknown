@@ -1,0 +1,170 @@
+Problema Rucsacului
+-------------------
+
+#include <algorithm>
+
+sort( arr, descrescator )
+
+typedef struct Obiect {
+	
+	int greutate;
+	int value;
+
+} Obiect;
+
+
+
+Input:
+4 30
+
+         G   V
+Obiect1: 10  60
+Obiect2: 5   50
+Obiect3: 12  60
+Obiect4: 20  140
+
+Obiect2: 5   50   (10)
+G = 5
+Obiect4: 20  140  (7)
+G = 5 + 20 = 25
+Obiect1: 10  60   (6)
+
+Gmax - G = 30 - 25  = 5
+
+x = greutatea fractionata 
+
+int x = Gmax - G
+
+factor = x / greutatea obiectului fractionat (0.5) => 0.5 * 60 = 60/2 = 30
+
+factorul => 5/10 = Y/60 => 0.5 = Y/60 =>Y = 60 * 2 = 30
+
+valoare      60     60
+-------   =  ---- = --- =
+ 
+Greutate    1/2     1
+                    --
+5                    2
+-- * 60 = 5 * 6 = 30
+10 
+
+update cost: cost = cost + factor * arr[i].valoare 
+
+"Câștigul adus de o fracțiune de obiect este direct proporțional cu greutatea fracțiunii."
+
+
+Regula de 3 simpla:
+un obiect de 10 kg....aduce valoare de 100 unitati
+un obiect x kg.... aduce valoare de 200 unitati
+
+x = 200 * 10 / 100
+
+10 kg .. 60 valoare
+
+5        Y
+
+5 * 60 = 10 * Y => Y = 5 * 60 / 10 = 30
+
+
+
+
+cin>>n>>Gmax
+
+void descrescator(Obiect ob1, Obiect ob2) {
+	
+	return ob1.value * ob2.greutate > ob1.greutate * ob2.valoare
+}
+
+ob1.value                 ob2.value     
+------------      >		 -------------
+ob1.greutate             ob2.greutate
+
+
+for de la i la n (numarul de obiecte):
+
+cin>>arr[i].greutate >> arr[i].valoare;
+
+
+sortezi dupa urmatorul criteriu:
+
+bubblesort(arr,"descrescator")
+
+pseudocod:
+
+a     c
+-- = --
+b     d
+
+a * d = b * c
+
+
+i = 1
+
+G = 0
+
+cost = 0
+
+while( i <= n) {
+	
+     Daca (G + arr[i].greutate <= Gmax) {
+
+           G = G + arr[i].greutate 
+
+           cost = cost + arr[i].value
+
+     } else {
+ 
+          if Gmax - G > 0
+
+           int x = Gmax - G
+
+           factor = x / arr[i].greutate
+
+           cost = cost + factor * arr[i].value
+
+     }    
+
+}
+
+x = Gmax - G
+
+costTotal = costTotal + x * valoarea ultimului obiect ramas 
+
+cout<<costTotal;
+
+50 + 140 + 60/2 = 50 + 140 + 30 = 220
+
+factor = valoare / Y
+
+  a    b
+ --  = -- => a * c = b * 1 => a c = b => c = b / a
+  1    c 
+
+x
+------    = 60 / Y =>
+greutate
+
+
+i = 1
+
+n = 10
+
+while( i <= n ) {
+	 
+	if(G + arr[i].weight <= Gmax) {
+	
+      ....
+
+	} else if(Gmax - G > 0) {
+
+       x = Gmax - G;
+
+       factor = ....
+
+	}  else {
+
+	   break;
+	}
+
+	i++;
+}

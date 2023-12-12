@@ -1,0 +1,40 @@
+fun euclid( x:Int, y:Int ):Int {
+    var r: Int
+    var b: Int
+    var a: Int
+    a = x 
+    b = y
+
+    while(b!=0){
+        r = a%b
+        a = b
+        b = r
+    }
+    return a
+    
+}
+fun main() {
+    var name ="YYY"
+    val name2 = "ZZZ"
+    var nume: String
+    nume= "Andrei"
+    
+    var items = arrayOf( "aaa", "bbb", "ccc" )
+    println( items.size )
+    println( items[0] )
+    for( element in items.reversed() ) {
+        println( element )
+    }
+    
+    var nume2: Int
+    nume2 = 100
+    
+    var nume3: Double
+    nume3 = 233.56
+    //array
+    
+    println(nume)
+    println(nume2)
+    println(nume3)
+    println( euclid(2, 10) )
+    }

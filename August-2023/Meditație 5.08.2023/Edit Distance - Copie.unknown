@@ -1,0 +1,90 @@
+Edit Distance
+-------------
+
+Avem 2 cuvinte:
+
+
+cuvantul 1 = ioana
+cuvantul 2 = dana
+
+2 transformari
+
+- prima transformare: inlocuim pe "o" cu "d"
+- a doua transornare: stergem litera "i"
+
+
+Un textfield si scrii: Sundey
+
+aplicam Edit Distance => Did you say: Sunday? or Sundays...
+
+Sundey => Sunday o singura transformare si anume inlocuim litera "e" cu "a"
+
+Algorimul Edit Distance este asemanator cu LCS
+
+
+o matrice DP (Dynamic Programming)
+
+n = reprezinta size-ul primului string.
+m = reprezinta size-ul celui de-al doilea string.
+
+for de la i = 1 pana la n
+
+    dp[i][0] = i
+
+
+    1
+    2
+    3
+    4
+    5
+    ..
+    n
+
+for de la j = 1 pana la m
+
+    dp[0][j] = i
+
+    1 2 3 4 5 .. m      
+
+
+for i de la 1 pana la n:
+
+      for j de la 1 pana m :
+
+        IF string1[i-1] == string2[j-1]
+
+        dp[i][j] = dp[i-1][j-1]
+
+        altfel:
+
+           dp[i][j] = 1 + min3(dp[i-1][j-1], dp[i-1][j], dp[i][j-1])
+
+return dp[n][m]
+
+return dp[5][4]
+
+
+function min3(a,b,c) {
+	 
+  return min(a, min(b,c))
+}
+
+
+Are complexitate polinomiala pentru ca avem 2 FOR-uri 
+      
+     I O A N A
+     1 2 3 4 5
+ d 1 X X X X X
+ a 2 X X X X X
+ n 3 X X X X X
+ a 4 X X X X X
+
+
+ DANA -> IDANA ==> adaugam litera 'i'
+
+ operatiile pe care le aplicam:
+ 1) inserare
+ 2) stergere
+ 3) inlocuire
+
+ 

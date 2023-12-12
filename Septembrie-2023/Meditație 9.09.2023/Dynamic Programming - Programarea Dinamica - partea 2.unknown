@@ -1,0 +1,112 @@
+Dynamic Programming - Programarea Dinamica
+
+Alaturi de Greedy, programarea dinamica este o tehnica ce conduce, de cele mai multe ori, la un timp de calcul polinomial. Mai mult, ea furnizeaza intotdeauna solutia optima. Din nefericire , programarea dinamica nu se poate aplica tuturor problemelor, ci numai celor care indeplinesc anumite conditii.
+
+SE considera o problema in care rezultatul se obtine ca urmare a unui sir de decizii D1, D2, D3, ..., Dn. In urma deciziei D1 sistemul evolueaza din starea S2 in starea S1, in urma deciziei D2, sistemul evolueaza din starea S1 in starea S2...in urma deciziei Dn, sistemul evolueaza din starea Sn-1, in starea Sn.
+
+Daca D1, D2, ..., Dn este un sir de decizii care conduce sistemul in mod optim din S0 in Sn, atunci trebuie indeplinita una din conditiile urmatoarea de optimalitate:
+
+1) Dk...Dn este un sir de decizii ce conduce optim sistemul din starea Sk-1 in starea Sm cu 1<= k <= n
+
+2) D1...Dk este un sir de decizii ce conduce optim sistemul din starea S0 in starea Sk cu 1<= k <= n
+
+
+3) Dk+1, ...., Dn, D1,...Dk... sunt siruri de decizii care conduc optim sistemul din starea Sk in starea Sn, respectiv din starea S0 in starea Sk, cu 1 <= k  <= n;
+
+
+Daca principiul de optimalitate se verifica in forma 1 , spunem ca se aplica programarea dinamica metoda inainte
+
+
+Daca principiul de optimalitate se verifica in forma 2 , spunem ca se aplica programarea dinamica metoda inapoi
+
+
+Daca principiul de optimalitate se verifica in forma 3 , spunem ca se aplica programarea dinamica metoda mixta.
+
+In matematica polinom:
+
+a x^2 + b x ^ 3 + c x 
+
+monom = a x ^ 2
+alt monom = b x ^ 3
+
+a x^2 y ^3
+
+int x;
+
+for i = 1; i < n; i++
+
+   for j = 1; j < n; j++
+      
+    bucla conduce la un timp polinomial
+
+Curs Complexitatea algoritmilor:
+
+Backtracking-ul conduce la un tip exponential 2^n
+
+Big O(n)
+
+Big O(n^2)    
+
+Big O(n^3)
+
+Big O(n log n) - algoritmul foloseste metoda divide et impera: cautarea binara
+
+un singur for conduce la un timp liniar
+
+a = [1,2,3,4,5,6,7,8,9,10]
+
+find = 5
+   a 
+log = numar
+   2
+
+   a = 2 ^ numar
+
+   log in baza a din b = c a.i. a = b^c
+
+
+Aplicatii:
+
+1. Problema triunghiului
+
+
+2
+1 5
+6 3 4
+5 6 1 4
+
+?
+? ?
+? ? ?
+5 6 1 4
+
+complexitatea algoritmului Big O(n^2)
+
+un For pentru a copia baza triunghiului
+
+new[n][i] = old[n][i]
+
+for i de la 1 la n:
+    for j de la 0 la i:
+        if 0 == j sau i == j:
+        new[i][j] = 1
+        altfel
+        new[i][j] = max(new[i+1][j+1], new[i+1][j]) 
+
+
+2. LCS - Longest Common Subsequece (cel mai lung subsir comun)
+
+3. LIS - Longest Increasing Subsequence (Cel mai lung subsir crescator)
+
+
+Problema:
+
+Se considera un vector cu n elemente intregi. Se cere sa se dipareasca cel mai lung subsir crescator al acestuia.
+
+input:
+n = 5
+V = [4,1,7,6,7]
+
+n = 5
+[24 12 15 15 19]
+

@@ -1,0 +1,109 @@
+C++ este bazat pe Matematica (algebra)
+
+ operatorii din c++ sunt de fapt legi de compozitie din matematica
+
++,-,*,/,% - legi de compozitie
+
+in c++
+
+ 2 * 7 = 14 
+
+2 = operand
+7 = operand
+simbolul * operator
+
+* - lege de compozitie (operatorul)
+
+Definitia legii de compozitie
+
+functia este un triplet: domeniul de definitie, codomeniu si lege de corespondenta
+
+Lege : MxM->M
+
++:MxM->M
+
+(2,3)->5
+
+*: MxM->M
+   (2,5)->10
+
+   (2,7)->14
+
+M = multimea numerelor intregi
+
+2 este un numar din multimea numerelor intregi
+7 este alt numar din multimea numerelor intregi
+
+la Structuri algebrice se studiaza legile de compozitie
+-------------------
+a = 2
+b = 7
+r = a + b
+cout<<r;
+cout = operand
+r = operand
++ = operator
+
+
+
+f(x) = ax + b
+
+f(x) = 2x + 3
+
+f:R->R
+
+x = 1 => a*1 + b
+x = 1 =>2x+3=2*1+3 =5
+
+functie: domeniu de definitie: a,b 
+         codomeniu r(int)
+         legea de corespondenta: la o pereche de numere(a,b) + adunarea -->> suma
+
+int sum(int a, int b) {
+
+    int r = a + b;
+	return r;
+}
+
+Z = multimea numerelor intregi
+
++:ZxZ->Z
+*:ZxZ->Z
+/:ZxZ->Z
+-:ZxZ->Z
+
+4 legi de compozitie 
+
+a,b apartin multimii numerelor intregi
+
+(a,b)->r
+
+a = 1;
+b = 1;
+
+cout<<2;
+
+
+
+cout<<4 -5 i
+
+partea reala = 4
+partea imaginara = -5
+
+stream<<NC.r
+
+stream<<"+"
+
+stream <<NC.i<<"i"
+
+4 + -5i
+
+if(NC.i>0) {
+	stream<<"+"
+}
+
+stream<<NC.i<<"i"
+
+4 -5i
+
+4 -5i

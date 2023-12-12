@@ -1,0 +1,164 @@
+Programarea Orientata pe Obiecte (programare obiectuala sau OOP - Object Oriented Programming) - Recapitulare
+-----------------------------------------------
+
+Are la baza notiunea de OBIECT.
+
+In limbajul C++ a fost studiata notiunea de structura struct. Dupa cum se stie, structura  este un ansamblu de date de diverse tipuri standard sau definite de programator  inainte de a fi folosite.
+
+Exemplu:
+
+- structura fractie - are doua campuri (date) de tipul int:
+
+struct fractie {
+	
+	   int nr, //numarator
+	       num //numitor
+};
+
+Daca la o structura oarecare, pe langa date, se mai introduc in componenta sa si functii (subprograme), iar in sintaxa sa in loc de cuvantul chei "struct" se scrie "class", atunci se ajunge la un tip abstract numit class. Avand in vedere aceste amannunte, se poate cu usurinta imagina structura de definire a tipului class, pe care o prezentam mai jos:
+
+
+class {
+	
+      [private]
+      date
+      metode
+
+      [protected]
+
+      date
+      metode
+
+      [public]  
+
+      date 
+      metode      
+}
+
+
+Definitie: Class este un concept superior celui de structura, care se prezinta sub forma unui ansamblu format din date si metode (functii, subprograme).
+
+Observatii:
+
+1. Datele care intra in definitia unui tip abstract class, se numesc DATE MEMBRE, iar functiile din componenta sa se numesc Functii MEMBRE sau METODE.
+2. Clasa este un tip abstract iar OBIECTUL este o INSTANTIERE a CLASEI.
+
+class Masina - prototip
+
+Dacia Logan - este o instantiere a clasei Masina
+Ford - alta instantiere a clasei Masina
+
+public, protected si private - se numesc modificatori de access, fiecare avand rol pana la intalnirea altuia sau pana la sfarsitul definitiei clasei.
+
+
+private => interzice accesul la date si metode din afara obiectului, membrii din acest domeniu sunt accesibili numai functiilor membre ale clasei.
+
+public => permite accesul la date si metode din afara obiectului din orice loc din domeniul in care este vizibila definitia clasei.
+
+protected => membrii din acest domeniu sunt accesibili numai functiilor  membre ale clasei si functiilor membre ale claseilor derivate.
+
+
+class Fractie {
+	
+	  //modificator de access: [public][private][protected]
+      public:
+          int numarator;
+          int numitor;
+          void citeste();
+          void afiseaza();
+}
+
+
+class Fractie {
+	
+	  //modificator de access: [public][private][protected]
+      private:
+          int numarator;
+          int numitor;
+          void citeste();
+          void afiseaza();
+}
+
+
+class Fractie {
+	
+	  //modificator de access: [public][private][protected]
+      protected:
+          int numarator; //date membre
+          int numitor;
+          void citeste(); //metode membre
+          void afiseaza();
+}
+
+class A {
+	
+	//daca datele membre sunt public sau protected, atunci putem sa le folosim si-n clasa B prin intermediul mostenirii
+	public:
+	int a,b;//datele membre
+	void read(); //metode
+	void display();
+}
+
+//mostenire date membre si metode din clasa A
+class B: public A {
+	
+}
+
+
+Observatii:
+
+- datele "numarator", "numitor" reprezinta pentru clasa Fractie datele membre;
+
+sau din clasa A datele a,b
+
+- functiile read() si display() sau citeste() si afiseaza() reprezinta pentru clasa Fractie metodele sale.
+
+- declararea unor obiecte se face intocmai ca declararea unei variabile
+
+// ca sa declaram o variabila: int var; [tipul de baza [spatiu] numele_variabilei]
+
+int a;
+float b;
+Fractie ob;
+
+presupunand ca avem la dispozitie obiectul ob care are in componenta sa datele numarator si numitor, precum si metodele read() si display() accesul la date se poate face astfel:
+
+ob [punct] date membre sau metode
+
+ob.numarator
+ob.numitor
+
+ob.read()
+ob.display()
+
+numele obiectului este separat printr-un punct de metoda sau data membra.
+
+class Fractie {
+	
+	  //date membre
+	  public: 
+	  int nr;
+	  int num;
+
+	  //metode membre
+	  void citeste() {
+
+	      cin>>nr;   
+          cin>>num;
+	  }
+	  void afiseaza() {
+          cout<<nr<<"/"<<num;
+
+	  }
+}
+
+int main() {
+	
+	Fractie f;//am declarat un obiect de tip Fractie
+	cout<<f.nr;
+	cout<<f.num;
+	cin>>f.citeste()
+	cout<<f.afiseaza()
+	Fractie f2;
+	cout<<f2.nr;
+}

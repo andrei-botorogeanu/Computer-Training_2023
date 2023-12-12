@@ -1,0 +1,22 @@
+int n;
+cout << n ;
+
+
+operand
+   |
+COUT-ul este un obiect de tip de bază "ostream"
+n este tip de baza int(integer)
+
+"<<" este un operator() care transmite valoarea lui n in flux care se afiseaza pe ecran
+
+operand este 7 si 9
+7 + 9
+"+" este operator
+
++,- ,* sunt operatori
+
+COUT si n sunt doi operanzi si "<<" este operator binar
+
+!(not) este operator unar
+
+ 

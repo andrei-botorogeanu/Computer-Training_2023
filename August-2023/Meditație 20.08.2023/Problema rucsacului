@@ -1,0 +1,56 @@
+Problema rucsacului:
+
+41 (capacitatea: 41 de kg)
+Greutate     Valoare
+12.34        123.99
+23.45        600.54
+12.78        90.67
+9.34         45.32
+0            0
+
+Avem 4 obiecte de introdus in rucsac.
+
+typedef struct object {
+
+	float weight, 
+	      value;
+
+} TObject;
+
+
+TObject arr[ 100 ];
+
+              TObject         Tobject
+arrp = { [12.34, 123.99], [23.45, 600.54],..}
+
+void readData(TObject *ob, int *size) {
+	
+	
+}
+
+
+int greutate = 1, 
+    valorea = 1
+
+size = 0;
+
+while( greutate != 0 && valoare != 0 ) {
+	
+	  cin>>greutatea>>valore;
+      
+      ob[size].weight = greutate 
+      ob[size].value = valoare
+
+      size++;  
+}
+
+ob1[0].weight
+ob1[0].value
+
+
+ob1[1].weight
+ob1[1].value
+
+......
+
+

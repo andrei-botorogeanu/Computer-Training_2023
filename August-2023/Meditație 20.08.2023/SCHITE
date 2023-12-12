@@ -1,0 +1,26 @@
+
+//             face parte din definitia struct-ului
+//               |
+typedef struct om{
+	int an, luna, zi;
+}  NAME ;
+    |    
+    |
+// este un tip de data ca int, float
+int main()
+{
+	NAME v[100];
+	v[0].an=2006;
+	....
+
+}
+OR
+
+struct om{
+	int an, luna, zi;
+};
+
+int main()
+{
+	struct om v[100];
+}

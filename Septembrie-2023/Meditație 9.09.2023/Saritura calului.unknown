@@ -1,0 +1,22 @@
+Saritura calului
+----------------
+
+
+Avem o tabla de sah si 8 posibilitati de deplasare pentru cal.
+
+line_Cal[] = {-2 , -1 , 1 , 2 ,  2 ,  1 , -1 , -2};
+Col_Cal[]  = { 1 ,  2 , 2 , 1 , -1 , -2 , -2 , -1};
+
+Calul sare in forma de L
+
+1) (-2,1) =>Inseamna ca piesa noastra se deplaseaza in spate cu -2 
+            linii si adauga 1 coloana la dreapta
+
+2) (-1,2) => se deplaseaza o linie in spate si adauga 2 coloane
+
+3) (1,2) => se deplaseaza in fata 1 linie si 2 coloane face dreapta
+4) (2,1) => se deplaseaza in fata 2 linii si 1 coloana face dreapta
+5) (2,-1) => se deplaseaza in fata 2 linii si 1 coloana scade
+6) (1,-2) => se deplaseaza in fata 1 linie si scade 2 coloane
+7) (-1,-2) => se deplaseaza in spate si scade 2 coloane
+8) (-2,-1) => se deplaseaza in spate si scade 1 coloana

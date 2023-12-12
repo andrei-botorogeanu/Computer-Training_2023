@@ -1,0 +1,140 @@
+Complexitatea algoritmilor
+--------------------------
+
+
+Fiind dat un anumit algoritm, se pune problema sa gasim un indicator care sa exprime complexitatea sa. Acest indicator va face abstractie de calculatorul pe care ruleaza programul obtinut in urma cuantificarii algoritmului intr-un limbaj de programare, face abstractie de limbajul de programare ales. Altfel spus, indicatorul va exprima complexitatea unui algoritm care poate fi redactat in pseudocod, schema logica sau limbaj de programare.
+
+Presupunem ca algoritmul are N date de intrare si acestea urmeaza sa fie prelucrate. Indicatorul care exprima complexitatea va tine cont de acest numar N.
+
+Exemple:
+
+a) Se cere sa se calculeze valoarea maxima a unui sir de n numere reale.
+
+b) Sa se determine daca n numere reale sunt distincte. Se va compara primul numar cu toate celelalte, al doilea numar cu cele care urmeaza si asa mai departe.
+
+Un algoritm contine mai multe operatii de atribuire (a = 5), decizionale (if statement), scriere(cout<<n), citire (cin>>n). Acestea se executa de un numar de ori care depinde de N. dar si de datele propriu-zie. Teoretic, ar trebui sa se determine de cate ori se executa fiecare operatie. Cum aceasta cerinta este imposibil de realizat in practica, s-a preferat alta metoda. Mai preciz, se alege o operatie de baza, se determina de cate ori se executa aceasta si se presupune ca restul operatiilor se executa de un numar de ori care este proportional cu numarul de executari al operatiei de baza. De regula ,operatia de baza aleasa este operatia decizionala IF.
+
+Exe:
+
+a) Pentru a calcula valoarea maxima a unui sir de N numere reale se efectueaza ? N-1 comparatii?
+
+
+Sir: 10, 50, 101, -10, 10.7, -20
+N = 6
+Cate comparatii?
+
+N - 1 comparatii
+
+b) Pentru a determina prin algoritmul de mai sus daca n numere reale sunt distincte, se efectueaza
+
+   N(N-1)/2
+
+   N-1 + N-2 + N-3...+ 1  = N(N-1)/2 = (N^2 - N) /2
+
+   N = 6 =>rezulta ca amve 6 (6-1)/2 = 6 * 5/ 2 = 15 comparatii.
+
+
+   =>>Exprimarea complexitatii unui algoritm se face APROXIMATIV. 
+
+   In cazul in care expresia care cuantifica numarul de operatii de baza este in forma unui polinom, ca in exemplele date, se precizeaza numai primul termen al acestuia. 
+
+   Big O(f(n))
+
+   f(n) = N
+
+   a) Algoritmul care calculeaza maximul a N numere reale are complexitatea O(N), desi se efectueaza N-1 comparatii.
+
+   Big O(f(n))
+
+   f(n) = N
+
+   b) Algoritmul care decide daca n numere reale sunt distincte, are complexitate O(N^2)
+
+   1 2 3 4 5 5 6 7  
+
+
+   Pentru complexitatea exponentiala:
+
+   Vrem sa generam toate submultimile unui multimi: 2^n
+
+   este pentru generarea partitiilor unei multimi:n!
+
+   - pentru generarea combinarilor, aranjamentelor, etc avem algoritmi exponentiali.
+
+   O(a^n)
+
+   Algoritmii de complexitate O(n) se mai numesc si algoritmi LINIARI.
+
+   Algoritmii de complexitate O(n^2) se mai numesc si algoritmi polinomiali.
+
+
+In practica trebuie evitati algoritmii care au complexitate exponentiala. Sunt preferati cei cu complexitate liniara, polinomiala si logaratimica. Pentru ca sunt eficienti din puncte de vedere al timpului de executie.
+
+
+Daca avem un algoritm pentru generararea submultimilor:
+
+- backtracking 2^n cu n = 100000
+- folosesti o complexitate polinomiala 
+
+start = start_time
+
+end = end_time
+
+end - start 0.0002 pentru complexitate polinomiala.
+
+
+#include <ctime>
+clock_t time_req;
+
+time_req = clock();
+
+time_req = clock();
+
+time_req = clock()- time_req;
+
+char *ctime(const time_t *timer)
+
+
+functia ctime are ca parametru o variabila pointer de tipul time_t
+
+Pointerul = o variabila care retine o adresa de un anumit tip
+
+int *p1; //pointer catre adrese de tip integer
+float *p2; //pointer catre adrese de tip float
+double *p3; //
+string *p4;
+
+int vec[] = {1,2,3,4,5,6,7,8};
+int a = 7;
+
+int *p; p = &a;
+
+p = vec;
+
+pointerul p retine adresa primei componente din vectorul vec
+
+cout<<*(p+2)<<vec[2];
+
+* = operator de deferentiere
+
+
+auto givemetime = chrono::system_clock::to_time_t(chrono::system_clock::now());
+   cout << ctime(&givemetime) << endl;
+
+char *ctime(const time_t *timer)
+
+#include <chrone>
+
+using namespace std;
+
+   2 functii:
+     - to_time_t( chrono::system_clock::now() )
+
+     	chrono::system_clock::now() => system clock time point to convert
+
+     	->ceea ce returneaza functia to_time_t este o valoare de tip time_t
+
+     - ctime(time_t *pointer)
+
+     output: Current Day, Date and Time is = Tue Jul 23 19:05:50 2019
+  

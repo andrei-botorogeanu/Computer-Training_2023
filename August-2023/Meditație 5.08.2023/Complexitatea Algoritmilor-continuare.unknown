@@ -1,0 +1,38 @@
+Complexitatea Algoritmilor:
+--------------------------
+
+- pentru un singur for => complexitate liniara
+- pentru 2,3,..n, for-uri => complexitate polinomiala N^k
+
+- a^k complexitate exponentiala
+
+- cautare binara => complexitate logaritmica N log N
+
+(exemplu: daca avem un sir de numere naturale si vrem sa aflam daca un numar se afla in sir sau nu:
+- folosim complexitate liniara Sir = [1, 2, 11, 7, 9, 100]
+
+search = 7
+
+for de la i = 1 pana la N:
+         Sir[i] == search
+
+         verificam daca avem egalitate
+
+- folosim complexitate logarimica, atunci cautarea binara:
+
+=> sortam sirul in ordine crescatoare si cautam binar
+
+    - cautam numarul la jumatatea intervalului (i +_j)/ 2
+    - daca se afla la jumatate atunci returnam pozitia
+    - altfel cautam search in stanga sau in dreapta lui (i+j)/2 in functie de relatia de ordine: > sau <
+)
+
+unde N reprezinta un size din input
+
+Daca avem un sir format din 1000 de elemente. si vrem sa cautam key = -1
+
+- cautarea liniara , in cazul cel mai defavorabil, facem 1000 de comparatii
+- cautarea binara , in cazul cel mai defavorabil, facem 14 comparatii (timpul de raspuns este mult mai rapid in comparatie cu cautarea liniara).
+
+
+

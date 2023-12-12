@@ -1,0 +1,251 @@
+Greedy Review
+------------
+
+1. Problema continua a rucsacului.
+2. Problema colorararii hartilor (am facut-o cu metoda Backtracking).
+
+Metoda Greedy se aplica problemelor de optimizare. Aceasta metoda determina intotdeauna o singura solutie a problemei. Ea contruieste treptat solutia: initial solutia este vida, apoi se adauga cate un element care este cel mai promitator la momentul respectiv (de unde provine si numele de greedy = lacom). Alegand la orice moment elementul optim pentru situatia locala, se asigura un optim local, dar nu se garanteaza ca se obtine optimul global. Pentru a se garanta acest lucru ar trebui demonstrat sau cunoscut faptul ca, in contextul problemei, aceasta modalitate de alegere duce la obtinerea unei solutii optime. Algoritmii care implementeaza aceasta metoda sunt performanti, chiar si-n cazul problemelor de dimnensiuni mari (timpul este liniar O(n) - complexitatea algoritmului).
+
+
+S1 <---S
+
+Sol <-- Multimea Vida (0)
+
+(WHILE) Cat timp (nu are loc conditia de terminare) Executa (DO)
+
+    alege x din S1 pe baza unui criteriu de optim local
+
+    S1 <-- S1 - { x }
+
+    Daca Sol reunit (U) { x } satisface criteriul  atunci
+
+    Sol <--- Sol U { x }
+
+Sfarsit Cat_timp    
+
+
+Problema: S1 = [ -1, 1, 2 , -3, -7, 9, 8, 0 ]
+
+S1.remove(x)
+
+
+Sa tiparim suma elementelor pozitive
+
+Sol -> 0
+
+x = a[i]
+
+daca x > 0 atunci
+
+     S1 <-- S1 - { x } (optional)
+
+     Sol <-- Sol + x
+
+tipareste Sol
+
+In limbajul pseudocod:
+
+For i = 0 pana la lungimea lui S:
+
+    Daca x respecta criteriul:
+        (alegem un optim local)
+        Sol <-- Sol + {x}
+        S1 <-- S1 - {x}
+
+Tiparim Sol (alegem un optim global)        
+
+
+Optimul global  = optim local 1 + optim local 2 + optim local 3 +...+ optim local n
+
+
+Problema: S1 = [ -1, 1, 2 , -3, -7, 9, 8, 0 ]
+
+sol = 0
+for( i = 0; i < n; i++) {
+
+    //alegem un element x din multimea S1
+	x = a[i]
+
+    //daca elementul ales este pozitiv, atunci
+	if(x > 0) {
+       //am ales un element x pozitiv care reprezinta un optim local
+       //il adaugam un multimea solutiilor
+	   sol = sol + x;	   
+	}
+}
+
+Tiparim sol (care reprezinta optimul global)
+
+
+1. Problema continua a rucsacului:
+-----------------------------------
+
+
+Se considera un rucsac de capacitate M si n obiecte, ale caror greutate si valoare sunt date. Sa se gaseasca o modalitate de a introduce cat mai multe obiecte in rucsac, astfel incat valoarea globala sa fie MAXIMA (optim global). Se considera ca obiectele pot fi fractionate. Presupunem ca datele de intrare sunt corecte si valorile obiectelor sunt strict pozitive. Pe prima linie a fisierului de intrare obiecte.in se gaseste capacitatea rucsacului M. Numarul obiectelor 50.
+
+Greutate - Valoare
+
+41 - reprezinta capacitatea rucsacului
+
+Avem 4 obiecte
+
+obiecte.in
+
+41
+12.34 123.99
+23.45 600.54
+12.78 90.67
+9.34 45.32
+
+
+
+
+Adaugam in rucsac obiectele urmatoare:
+
+23.45 600.54
+12.34 123.99
+12.78 90.67
+9.34 45.32
+
+
+rucsac.out
+
+In rucsac vor fi introduse urmatoarele obiecte:
+
+Obiectul 2: 23.45 600.54 - complet 
+Obiectul 1: 12.34 123.99 - complet 
+Obiectul 3 12.78 90.67 - 5.21 kg
+
+
+Solutia problemei:
+
+Obiectele se sorteaza descrescator in ordinea raportului VALOARE / GREUTATE, apoi
+se introduc, in aceasta ordine in rucsac. Ultimul obiect introdus va fi eventual fractionat. La fiecare pas se selecteaza  din multimea obiectelor inca neintroduse obiectul  care are cea mai mare valoare unitara VALOARE / GREUTATE. 
+
+Pentru reprezentarea unui obiect vom defini tipul
+TObiect de tip struct.
+
+g - greutate.
+v - valoare.
+id - indexul obiectului in cadrul obiectelor citite.
+
+typedef struct {
+	    float g, v;
+	    int id;
+
+} TypeObiect;
+
+TypeObiect ob1, ob2, ob3
+
+
+Tipul struct contine cele trei elemente definitorii ale unui obiect: 
+- greutate.
+- valoare.
+- indexul acestuia in cadrul obiectelor citite.
+
+S1 <--- Multimea obiectelor care vor fi introduse in rucsac
+
+Sol <-- Multimea Vida (0)
+Sol = [0]
+
+(WHILE) Cat timp (nu are loc conditia de terminare) Executa (DO)
+
+    alege x din S1 pe baza unui criteriu de optim local
+
+    S1 <-- S1 - { x }
+
+    Daca greutatea obiectului x este mai mica decat M  atunci
+
+    Sol <--- Sol U { x } (adaugam obiectul in rucsacul nostru)
+
+Sfarsit Cat_timp    
+
+Pentru citirea datelor din fisierul de intrare obiecte.in scrie functia
+readData(), care va salva obiectele in array-ul a[]. Functia returneaza, de asemena, numarul de obiecte si capacitatea rucsacului M. Pentru sortarea vectorului a[] de obiecte, vom utiliza functia predefinita qsort(). (functia cu 2 argumente)Predicatul binar folosit de aceasta metoda este compare() si se refera la 
+
+void qsort(arr, size, functia_compara) {
+
+	      if(functia_compara[elem1] > functia_compara[elem2]) {
+
+	      }
+}
+
+
+compara(const void *a, const void * b) {
+
+    TObiect *obiect1 = (TObiect*)a;
+    TObiect *obiect2 = (TObiect*)b;
+
+    return 
+}
+
+
+qsort((void*)a, n, sizeof(TObiect), compara)
+
+
+arr = [a:5, b:4, c:3, d:22, e:1,f:-1]
+
+qsort(arr, comp)
+
+arr = [f:-1, c:3, b:4, a:5, d:22]
+
+Predicatul binar folosit de aceasta metoda compara se refera la comparatia valorilor unitare a doua obiecte (rapoartele valoare / greutate). Dupa sortarea unitara a acestora, vom introduce pe rand obiecte in rucsacm atata timp cat acestea incap (capacitate M)
+
+obiectele noastra sunt sortate descrescator in functie de raportul valoare / greutate.
+
+i = 0
+
+M = 41
+
+while (M > 0) {
+
+   //daca obiectul nostru incape in rucsac (M -capacitate)
+   if(M >= a[i].g) {
+ 
+      //selectam obiectul si-l adaugam in rucsac 
+      M = M - a[i].g
+      i++;      
+
+      //adaugam fractionat obiectul
+   } else {
+
+        M = -M
+    }
+}   
+
+
+for(j = 0; j < i; j++) {
+
+	cout<<a[i].id<<" "<<a[i].g<<" "<<a[i].v<<" - COMPLET";
+}
+
+if(M < 0) {
+	
+   cout<<a[i].id<<" "<<a[i].g<<" " << a[i].v << -M <<" - FRACTIONAT";
+}
+
+exemplu simplu:
+
+Capacitate Rucsac : 41
+
+obiectul 1 are 10kg, 100 cost
+obiectul 2 are 22kg, 20 cost
+obiectul 3 are 7 kg, 33 cost
+obiectul 4 are 11kg, 44 cost
+
+adaugam obiectul 1 in rucsac 41 - 10 = 31
+capacitatea rucsacului devine M = 31
+22 <= 31 ? da! atunci 31 - 22 = 9
+capacitatea rucsacului acum este de M = 9
+adaugam si obiectul 3
+7 <= 9 
+M = 9 - 7 = 2 deci capacitatea rucsacului acum este 2
+M = -M
+11 <= 2 ? NU! atunci trebuie sa fractional obiectul numarul 4. deci din 11 kg scadem 2 kg.
+
+am obtinut la final optimul global
+
+obiectul 1 are 10kg, 100 cost - adaugat COMPLET
+obiectul 2 are 22kg, 20 cost - ADAUGAT COMPLET
+obiectul 3 are 7 kg, 33 cost - ADAUGAT COMPLET
+obiectul 4 are 11kg, 44 cost - FRACTIONAT (luam 2 kg din obiect)

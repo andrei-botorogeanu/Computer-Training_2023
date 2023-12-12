@@ -1,0 +1,60 @@
+Se stie ca din numarul 4 se poate obtine orice numar aplicand urmatoarele operatii:
+
+a) impartire la 2
+b) adaugare unui 4 la sfarsitul numarului
+c) adaugare unui 0 la sfarsitul numarului
+
+
+n = 3
+
+4 -> 2 -> 24 -> 12 -> 6 -> 3
+
+n = 12 
+
+4 -> 2 -> 24 -> 12
+
+n = 2524
+
+4 -> 2 -> 1 -> 10 -> 5 -> 50 -> 504 -> 252 -> 2524
+
+Solutie:
+
+Pentru a construi sirul care duce la numarul dat, se vor face operatiile inverse de la n
+pana ajungem la numarul 4:
+
+- stergerea zeroului de la sfarsit, daca acesta exista
+- stergerea numarului 4 de la sfarsit daca acesta exista
+- impartire la 2 altfel
+
+
+
+void number_four(int n) {
+	
+	if(n-4) {
+
+	    switch(d) {
+	       case -1: number_four(n/10); break;
+	       case 0: number_four(n/10); 
+	       case 4: number_four(n/10); break;
+	       default: number_four(n*2);
+	    }
+	    cout<<"->"<<n;
+	}
+
+}
+
+if (conditie) {
+	....
+} else if(conditie) {
+	...
+
+} else if(conditie) {
+	.....
+}
+
+
+for(int i = 1; i <= 7; ++i) {
+	
+	if(i == 5) break;
+	else cout<<i<<" ";
+}
