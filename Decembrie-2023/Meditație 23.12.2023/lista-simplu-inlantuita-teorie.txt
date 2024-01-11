@@ -1,0 +1,57 @@
+Liste Liniare
+-------------
+
+Definitia Listelor:
+-------------------
+
+O lista liniara este o colectie de n >= 0 noduri
+x1, x2, x3, ..., xn aflate intr-o relatie de ordine.
+Astfel x1 este primul nod al listei, x2 este al doilea
+nod al listei, ..., xn este ultimul nod al listei.
+Operatiile permise sunt:
+
+- accesul la oricare nod al listei in scopul citirii sau
+modificarii informatiei continute de acesta.
+- adaugarea unui nod, indiferent de pozitia pe care o ocupa in
+lista.
+- schimbarea pozitiei unui nod in cadrul listei.
+
+
+O lista liniara simplu inlantuita este o structura de forma:
+
+        nod1                nod2                nod3
+     |info1 adr2|  ---> |info2 adr3| ---->  |info3 adr4|   ---> .....---> |infon NULL|
+
+adr1                 adr2                  adr3                        adrn
+
+
+Semnificatia notatiilor folosite este urmatoarea:
+
+- adr1, adr2, ..., adrn reprezinta adresele celor n noduri
+- info1, info2, ..., infon reprezinta informatiile continute de noduri, de alta natura decat
+cele de adresa
+- 0,NULL are semnificatia de nicio adresa, elementul este ultimul in lista
+
+accesul la un nod al listei se face prin parcurgerea nodurilor care il preced. Aceasta operatie
+necesita un efort de calcul.
+
+informatiile de adresa sunt prezentate in cadrul fiecarui nod, deci ocupa o zona de memorie.
+
+- avantajele alocarii inlantuite sunt date de faptul ca operatiile de adaugare
+
+sau eliminare, stergere a unui nod se fac rapid.
+
+
+Crearea unei listei
+-------------------
+
+- intreaga lista este memorata in HEAP
+- poate fi gestionata printr-un singur pointer, memorat in segmentul de date
+
+struct Node* head = new Node;
+
+pointerul head este memorat in segmentul de date, iar structura Node este memorata in zona HEAP
+
+pointerul poate accesa numai primul element al listei. Apoi
+pornind de la acesta se poate accesa al doilea element al listei, apoi din al doilea putem
+sa accesam al treile, si asa mai departe.

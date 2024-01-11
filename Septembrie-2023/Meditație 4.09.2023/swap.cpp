@@ -18,8 +18,7 @@ void swap(int *p1, int *p2) {
 
 void swap2(void *p1, void *p2, int dim) {
 
-
-std::cout<<"Avem 4 octeti = "<<dim;
+    std::cout<<"Avem 4 octeti = "<<dim;
   
    //am convertit p1 care initial este un pointer catre void la un pointer catre char
    char* a = (char*)p1;
@@ -106,7 +105,6 @@ std::cout<<std::endl<<"a = "<<a<<" b = "<<b<<std::endl;
 
 std::cout<<"Adresa lui c = "<<&c;
 	
-
 	//baza 2: 010101010010101
 	//baza 3: 01201010102
 	//baza 4: 001010023

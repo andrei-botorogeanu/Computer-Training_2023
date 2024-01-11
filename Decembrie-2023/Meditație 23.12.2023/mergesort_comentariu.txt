@@ -1,0 +1,52 @@
+
+
+                  0  1  2 3 4  
+         VECTOR = {9 3 -4 5 7}
+
+
+                          lo, middle, high
+                         [0,2,4]
+
+divide[0,0] si divide[1,1] divide[2,2] divide[3,3] divide[4,4]
+
+    divide[0,1] si divide[2,2]    divide[3,3] si divide[4,4]
+
+                  divide[0,2]    divide[3,4]
+
+                          divide[0,4]
+
+
+level 5 [interval]  -salveaza pe stiva variabilele locale  \|/ interclaseaza
+level 4 [interval]  -salveaza pe stiva variabilele locale
+level 3 [interval]    -salveaza pe stiva variabilele locale
+level 2 [interval]      -salveaza pe stiva variabilele locale
+level 1 [interval]    -salveaza pe stiva variabilele locale si informatiile relevante
+
+
+
+def factorial(int n) {
+
+    if(n == 1) {return 1}
+    else
+        return n * factorial(n-1);
+}
+
+int main() {
+factorial(5)
+}
+
+1 1
+2 1*2
+3
+4
+5 1*2*3*4*5
+120
+
+5! = 5 factorial(4) = 5 * 4 * factorial(3) = 5 * 4 * 3 * 2 factorial(1)
+5 * 4 * 3 * 2 * 1
+
+       0 1 2 3 4 5
+arr = [2,4,6,1,3,5]
+
+interclasare(0,2,5)
+[0,2],[3,5]

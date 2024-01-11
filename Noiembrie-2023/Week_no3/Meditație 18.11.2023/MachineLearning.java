@@ -22,6 +22,13 @@ public class MachineLearning {
          //sort: 1 2 2 3 4 4 5 10
          // 2
          // 10 5 4 4 3 2 2 1
+/*
+        0   1   2   3   4   5   6   7  8
+cresc: 10  11  12  13  13  15  16  17 18
+       18  11  12  13  13  15  16  17 10
+    ...
+desc:  18  17  16  15  13  13  12  11 10
+*/
          double freq = 1;
          double tmp = 1;
          double mode = 0;

@@ -47,7 +47,7 @@ class MusicPlayer:
          if file:
           self.playlist.append(file)
 
-if _name_ == "__main__":
+if __name__ == "__main__":
     root = tk.Tk()
     app = MusicPlayer(root)
     root.mainloop()

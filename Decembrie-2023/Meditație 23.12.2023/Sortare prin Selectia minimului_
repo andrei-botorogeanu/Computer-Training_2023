@@ -1,0 +1,50 @@
+Sortare prin Selectia minimului:
+-------------------------------
+
+
+vectorul nostru Input: 8 7 -55 5 4 3 2
+ 
+       0 1  2  3 4 5 6 
+       8 7 -55 5 4 3 2
+         j
+         8 7 -55 5 4 3 2
+
+         -55 7 8 5 4 2 2
+i = 0
+minIndex = i
+j = i + 1
+
+minIndex = 1
+
+vec[j] < vec[IndexMin] ? DA indexMin = j: indexMin ramane neschimbat
+
+indexMin = 2
+
+int temp = vec[indexMin]
+vec[indexMin] = vec[i]
+vec[i] = temp
+
+
+
+0 1   2  3    4 5     6 
+8 7 -55  5 -114 3 -44442
+
+
+
+
+for i = 0; i < n - 1; ++i:
+
+indexMin = i
+
+for j = i + 1; j < n; j++ {
+	
+    daca vec[ j ] < vec[ indexMin ], atunci
+
+       indexMin = j
+}      
+
+int temp = vec[indexMin]
+
+vec[indexMin] = vec[i]
+
+vec[i] = temp;

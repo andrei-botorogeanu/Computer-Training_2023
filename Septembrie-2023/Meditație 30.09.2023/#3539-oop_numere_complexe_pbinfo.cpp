@@ -8,7 +8,7 @@ class Complex
 public:
     int i, r;
 public:
-    // constructor stabileste valoare partii reale si a celei imaginare
+    // constructor stabileste valoarea partii reale si a celei imaginare
     Complex(int pr, int pi);
     // constructor creeaza numarul complex nul
     Complex();

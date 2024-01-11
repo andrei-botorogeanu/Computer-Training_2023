@@ -1,0 +1,111 @@
+Liste simplu inlantuite
+-----------------------
+
+struct Node {
+	int data;
+	struct Node *next;
+}
+
+arr = { 9, 8, 7, 6, 5, 4, 3, 2, 1 }
+        0                       8
+
+struct Node *head = NULL;
+
+DACA head este NULL
+
+     head = new Node
+     head->data = value
+     head->next =  NULL
+
+altfel daca head nu este NULL 
+
+     struct Node* nod_nou;
+     nod_nou = new Node
+     nod_nou->data = value     
+     nod_nou->next = head
+     head = nod_nou
+
+     arr[0] = 9
+
+     adaugareinLista(9);
+
+     head = new Node
+     head->data = 9
+     head->next =  NULL (adresa nodului este NULL/0/nullptr)
+
+     arr[1] = 8
+     struct Node* nod_nou;
+     nod_nou = new Node
+     nod_nou->data = value   //completez zona de data  
+     nod_nou->next = head (adresa nodului care contine informatia 9)
+     head = nod_nou
+
+     arr[2] = 7
+     struct Node * nod_nou
+     nod_nou = new Node
+     nod_nou->data = 7
+     nod_nou->next = head (adresa nodului care contine informatia 8)
+     head = nod_nou
+
+     arr[3] = 6
+     struct Node*nod_nou;
+     nod_nou = new Node
+     nod_nou->data = 6
+     nod_nou->next = head (adresa nodului care contine informatia 7)
+     head = nod_nou
+
+     arr[4] = 5
+
+     struct Node *nod_nou
+     nod_nou = new Node
+     nod_nou->data = 5
+     nod_nou->next = head (adresa nodului precedent care contine informatia 6)
+     head = nod_nou
+
+     arr[5] = 4
+
+     struct Node*nod_nou
+     nod_nou = new Node (aloc spatiu in HEAP pentru o structura Node si adresa o atribuie pointerului nod_nou)
+
+     nod_nou->data = 4 //completeaza zona de date
+     nod_nou->next = head (adresa nodului care contine informatia 5 //completeaza zona next
+     head = nod_nou //stabilesc capul liste ca fiind acest nod_nou introdus
+
+     arr[6] = 3
+     struct Node *nod_nou
+     nod_nou = new Node (aloc spatiu in HEAP pentru o zona de tip struct Node si adresa de inceput o atribui pointerului nod_nou care este memorat in segmentul de date)
+     
+     //lista: 3,4,5,6,7,8,9
+     arr[7] = 2
+     struct Node *nod_nou
+     nod_nou = new Node
+     nod_nou->data = 2
+     nod_nou->next = head  (head este un pointer care retine adresa nodului precedent adica 3)
+     head = nod_nou
+
+     arr[8] = 1
+     struc Node *nod_nou;
+     nod_nou = new Node
+     nod_nou->data = 1
+     nod_nou->next = head
+     head = nod_nou
+
+     lista -> 1, 2, 3, 4, 5, 6, 7, 8(NULL)    
+
+     nodul care contine informatia 1, va contine si adresa nodului urmator adica adresa nodului unde se afla 2,
+
+     while( head ) {
+
+         print( head->data )
+
+         head = head -> next; //cu aceasta instructiune ne mutam pe urmatorul nod
+     } 
+
+     lista -> 
+
+     nodul1 care are informatia 1, si adresa nodului urmator adica 2, 
+
+     nodul2 care are informatia 2 si adresa nodului urmatorul adica 3,
+
+     ........................
+     noduln care are informatia n are adresa NULL

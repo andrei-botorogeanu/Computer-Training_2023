@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 class Fractie {
@@ -133,8 +132,8 @@ Programarea orientata pe obiecte imbina trei concepte fundamentale:
 - Mostenire
 - Polimorfism
 
-Proprietatea obiectelor, de a ingloba intr-o singura structura sintactica atat date cat si metode care prelucreaza eventual aceste date,
-se numeste INCAPSULARE
+Proprietatea obiectelor, de a ingloba intr-o singura structura sintactica atat date
+cat si metode care prelucreaza eventual aceste date, se numeste INCAPSULARE
 
 */
 

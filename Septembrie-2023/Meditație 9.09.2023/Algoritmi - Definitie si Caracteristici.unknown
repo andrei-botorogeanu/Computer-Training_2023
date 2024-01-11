@@ -14,7 +14,7 @@ Proprietatile algoritmului:
 
 1. orice algoritm trebuie sa posede date de intrare.
 2. orice algoritm trebuie sa posede date de iesire.
-3. Determinism - in orice moment trebuie cunoastem pasul urmator.
+3. Determinism - in orice moment trebuie sa cunoastem pasul urmator.
 4. Generalitatea - algoritmul este aplicabil unei clase intregi de probleme.
 5. Eficienta - furnizarea solutiei trebuie sa fie realizabila prin consumul eficient al resurselor (spatiu / timp).
 6. Ginitudinea - pentru orice set de date de intrare posibile ale problemei, solutia este furnizata intr-un numar finit de pasi.
