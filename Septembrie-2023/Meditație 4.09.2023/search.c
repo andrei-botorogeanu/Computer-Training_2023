@@ -5,8 +5,9 @@
 Secventa de cautat:
 
 Se citeste de la tastatura un numar natural cu cel mult 100 de cifre.
-Determinati cea mai lunga secventa de cifre consecutive, pozitia de inceput a acesteia si continutul. In cazul in care exista mai multe secvente de aceeasi dimensiune maxima,
-afisati-o pe prima din sir.
+Determinati cea mai lunga secventa de cifre consecutive, pozitia de inceput a
+acesteia si continutul. In cazul in care exista mai multe secvente de aceeasi
+dimensiune maxima, afisati-o pe prima din sir.
 
 Input: 432156012345698123001
 Lungimea maxima = 7

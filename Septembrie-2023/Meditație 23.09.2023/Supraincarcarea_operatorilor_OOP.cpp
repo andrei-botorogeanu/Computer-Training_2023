@@ -9,7 +9,7 @@ public:
 	{
 		this->numarator = numarator;
 		this->numitor = numitor;
-//Cu "this" se pot accesa si datele membre si metodele membre
+//Cu "this" se pot accesa și datele membre și metodele membre
 	}
 	void display()
 	{

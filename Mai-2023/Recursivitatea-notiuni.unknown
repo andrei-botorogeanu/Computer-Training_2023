@@ -1,0 +1,55 @@
+Recursivitatea
+--------------
+Recursivitatea este una din notiunile fundamentale din informatica si deseori permite rezolvarea
+concisa a unor probleme. Aceasta notiune este derivata din matematica: afirmam ca o notiune
+este definita recursiv, daca in cadrul definitiei apare insasi notiunea care se defineste. In
+programare, recursivitatea se exprima cu ajutorul functiilor, deoarece ele au un nume care este
+specificat in apeluri. Spunem ca un subprogram este recursiv daca apelul sau poate aparea cand
+subprogramul este activ. In cadrum unui algoritm recursiv este suficient sa ne gandim
+ce se intampla la un anumit nivel, pentru ca la orice nivel se intampla acelasi lucru. Orice functie
+recursiva trebuie sa contina o conditie de oprire, adica sa gandim algoritmul astfel incat procesul sa fie finit. Recursivitatea indirecta are loc atunci cand o functie apeleaza o alta functie, care la randul ei o apeleaza.
+
+
+Aplicatie Simpla:
+1.Suma cifrelor unui numar natural
+
+
+//varianta iterativa
+N = 1234
+Suma = 1 + 2 + 3 + 4 = ?
+cin>>n;
+s = 0
+while(n) {
+	s += n % 10;
+	n /= 10
+}
+
+//n = 123
+//definim o functie recursiva
+int sumaCifre(int n) {
+	
+	//conditie de oprire => 
+	if(n == 0) return 0;
+	 else
+	 return n % 10 + sumaCifre(n/10)
+        /\ 
+	     |+ 3 + sumaCifre(123/10)
+	     | + 2 + sumaCifre(12/10)
+	     | + 1 + sumaCifre(1/10) (returneaza 0)
+
+}
+
+int main() {
+
+	n = 123
+	
+	cout<<sumacifre(n)
+}
+
+sumaCifre(123/10=12)
+
+n = 0   |
+n = 1   |
+n = 12  |
+
+//varianta recursiva

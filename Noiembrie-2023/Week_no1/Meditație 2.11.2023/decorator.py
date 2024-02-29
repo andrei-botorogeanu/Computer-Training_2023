@@ -21,7 +21,6 @@ def hello():
     return "Hello, Python Decorator!"
 
 def main():
-
     print( hello() )
 
 main()

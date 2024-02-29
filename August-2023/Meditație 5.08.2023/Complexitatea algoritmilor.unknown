@@ -31,7 +31,7 @@ b) Pentru a determina prin algoritmul de mai sus daca n numere reale sunt distin
 
    N-1 + N-2 + N-3...+ 1  = N(N-1)/2 = (N^2 - N) /2
 
-   N = 6 =>rezulta ca amve 6 (6-1)/2 = 6 * 5/ 2 = 15 comparatii.
+   N = 6 =>rezulta ca avem 6 (6-1)/2 = 6 * 5/ 2 = 15 comparatii.
 
 
    =>>Exprimarea complexitatii unui algoritm se face APROXIMATIV. 

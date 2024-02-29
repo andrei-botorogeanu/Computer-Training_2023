@@ -14,15 +14,15 @@ public class InsertionSortJava {
 		}
 	}
 
-	public static void main(String[] args){
-		int[] vec={7,6,5,-4,3,2,-1,0};
+	public static void main(String[] args) {
+		int[] vec = {7,6,5,-4,3,2,-1,0};
 		System.out.println("Vectorul original: ");
 		DisplayVector(vec);
 		InsertSort(vec);
 		System.out.println("Vectorul sortat: ");
 		DisplayVector(vec);
 	}
-	public static void DisplayVector(int[] vec){
+	public static void DisplayVector(int[] vec) {
 		for(int value: vec)
 			System.out.print(value + " ");
 		System.out.println();
@@ -45,9 +45,9 @@ public class InsertionSortJava {
 	v[1] = v[0] = 6
 	{6, 6, 7, -4, 3, 2, -1, 0}
 	j = -1 
-	vec[0] =5
+	vec[0] = 5
 	{5, 6, 7, -4, 3, 2, -1, 0}
-3.  i =3,  j=2, aux =-4
+3.  i=3,  j=2, aux =-4
 	v[3] = v[2] =7
 	j=1
 	{5, 6, 7, 7, 3, 2, -1, 0}

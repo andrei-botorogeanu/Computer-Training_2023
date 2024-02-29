@@ -1,0 +1,85 @@
+
+solutie: 1 2 3 (maximul este 3) inseamna ca avem 3 partitii
+solutie: 1 2 1 inseamna ca avem 2 partitii
+solutie: 1 1 2 inseamna ca avem 2 partitii
+
+pentru n = 3
+Avem 5 partitii
+
+stiva:
+      3 (level3)
+      2 (level2)
+      1 (level1)
+
+
+
+stiva:
+      1 (level3)
+      2 (level2)
+      1 (level1)
+
+      max = 2
+      for i de la 1 pana la 2:
+
+          for j de la 1 pana la 3:
+
+             daca stiva[j] == i atunci
+
+                  afisam j
+                  {1,3}
+                  {2}
+
+                  121 inseamna {1,3} U {2}
+
+1 2 1 este echivalent cu a scrie : {1,3} U {2}
+
+O partitie a multimii M = {1,2,3}  = {1,3} U {2}
+                                     {1}U{2}U{3}
+
+1 2 3 alta codificare pentru partitie 
+
+1 1 1
+
+for i de la 1 pana 3:
+
+    for j de la 1 pana 3:
+
+        daca stiva[1] este egal cu 1 
+
+             atunci tiparesti j
+
+
+            partitie: {1}{2}{3}
+
+n = 3
+
+1 2 1 {1,3}{2}
+Avem 2 submultimi:
+                 {1,3},
+                 {2}                
+1 1 1 {1,2,3}
+Avem 1 submultime
+                 {1,2,3} 
+1 2 3 {1}{2}{3}
+
+Avem 3 submultimi: {1} 
+                   {2}
+                   {3} 
+
+1 1 1 maximul este 1
+
+for i de la 1 la 1:
+   afiseaza "{ ""
+   for j de la 1 la 3
+
+       daca stack[j] == i (1) atunci
+            afisare "j"
+            afizeaza 1 
+            afiseaza 2
+            afiseaza 3
+   afiseaza "}"         
+
+   Pasul 1 : gasim maximul din stiva solutie
+   Pasul 2:  folosim un for pentru i de la 1 la max si inca un for de la 1 la N:
+
+

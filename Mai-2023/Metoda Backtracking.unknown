@@ -1,0 +1,26 @@
+Metoda Backtracking
+-------------------
+Aplicatie: Generarea permutarilor.
+
+1. Aspecte teoretice
+
+Aceasta tehnica se foloseste in rezolvarea problemelor care indeplinesc simultan
+urmatoarele conditii:
+
+- solutia lor poate fi pusa sub forma unui vector
+S = x1x2...xn cu x1 apartine lui A1
+                 x2 apartine lui A2
+                 ,,,,,,,,,,,,,,,,,,
+                 xn apartine lui An
+
+- multimile A1, A2, ...., An sunt multimi finite, iar elementele lor se considera ca sunt intr-o relatie de ordine bine stabilita.
+
+- nu se dispune de o alta metoda de rezolvare mai rapida.                  
+
+Desi este o metoda care imbunateste cautarea exhaustiva, timpul de executie este exponential. De aceea aceasta tehnica nu poate fi aplicata fara discernamant unei probleme, ci doar atunci cand suntem convinsi ca nu exista o cale mai eficienta de rezolvare(de exemplu, un algoritm polinomial)
+
+- se cer toate solutiile problemei
+- o solutie se poate reprezenta  cu ajutorul unui vector, nu neaparat cu un numar fix de elemente.
+- o solutie se poate construi progresiv: x[1], x[2],...,x[n]
+- putem decide , la momentul k, daca valoarea x[k], atribuita elementului k poate conduce la o solutie, considerand fixate valorile x[1], x[2], x[3],....,x[k-1]
+- putem decide la un moment dat daca am obtinut o solutie

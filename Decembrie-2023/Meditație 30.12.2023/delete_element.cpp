@@ -8,14 +8,14 @@ struct  Node {
 
 void CreateList(int value)
 {
-	if(front==nullptr){
+	if(front == nullptr){
 		struct Node *c = new Node;
 		c->data = value;
 		c->prev = nullptr;
 		c->next = nullptr;
 		front = back = c ;
 	} else {
-		struct Node *c =new Node;
+		struct Node *c = new Node;
 		c->data = value;
 		c->prev = back;
 		c->next = nullptr;	
@@ -66,7 +66,7 @@ void display_to_left()
 }
 int main()
 {
-	int arr[]={1,2,3,4,5}, 
+	int arr[] = {1,2,3,4,5}, 
 		n = sizeof(arr) / sizeof(arr[0]);
 	for(int i=0; i<n; i++)
 		CreateList(arr[i]);

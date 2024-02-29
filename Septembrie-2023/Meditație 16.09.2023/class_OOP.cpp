@@ -51,7 +51,7 @@ public:
 			s=  s*10 +c%10;
 			c/=10;
 		}
-		nr= s;
+		nr = s;
 		cout<<s;
 	}
 };

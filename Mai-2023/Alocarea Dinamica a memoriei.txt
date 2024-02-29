@@ -1,0 +1,121 @@
+Alocarea Dinamică a memoriei
+----------------------------
+
+1.1 Variabile de tip pointer
+
+Memoria internă poate fi privită ca o succesiune de octeti(un octet are 8 biti). 
+Pentru a-i distinge, acestia sunt numerotati. Numarul de ordine al unui octet se numeste adresa lui.
+
+Orice variabila ocupa un numar de octeti succesivi. De exemplu in c++, o variabila de tip int ocupa 2 octeti (0000 0000 1111 0000).
+
+Definitie:
+Adresa primului octet al variabilei se numeste adresa variabilei.
+
+Observatii:
+- Nu trebuie confundata adresa unei variabile cu valoarea pe care aceasta o memoreaza.
+- uneori, in loc de adresa a unei variabile vom folosi termenul de pointer.
+
+Memorarea adreselor variabilelor se face cu ajutorul variabilelor de tip Pointer.
+
+Limbajul C++ face distinctie intre natura adreselor care pot fi memorate. Astfel exista adrese de tip int, adrese de tip float, adrese de tip char, etc.
+
+=> tipul unei variabile de tip pointer se declara ca mai jos:
+
+tip *nume_variabila.
+
+Exemple:
+
+- Variabile de tip pointer catre variabile de tip Int
+
+int *adr1, *adr2;
+
+- variabile de tip pointer catre variable de tip float
+
+float *adr1, *adr2;
+
+
+struct Person {
+	
+	 char name[20], prenume[20];
+	 float nota_math, nota_info;
+	 int age;
+};
+
+Person *a, *b;
+Person*c;
+
+Observatie:
+
+Caracterul * poate fi asezat in mai multe feluri;
+
+=>Adresa unei variabile se obtine cu ajutorul operatorului de referentiere '&', care trebuie sa preceada numele variabilei:
+
+&nume_variabila.
+
+int a = 8;
+int *ptr = &a;
+cout<<*ptr;
+
+int *p;
+int a;
+float *ptr;
+
+ptr = &a; // nu este corecta atribuirea
+
+
+Aceste variabile pot fi alocate dinamic. Asta inseamna ca:
+
+----> Spatiul necesar memorarii este rezervat intr-un segment special destinat acestui scop, numit
+HEAP
+
+----> In memorie se rezerva un spatiu in timpul executarii programului, atunci cand se utilizeaza un anumit operator.
+
+----> atunci cand variabila respectiva nu mai este utila, spatiul de memorie este eliberat, pentru a fi rezervat, daca este cazul, pentru alte variabile.
+
+Mecanismul alocarii dinamice este urmatorul:
+
+
+- se declara o variabila pointer, s-o numit ptr, care permite memorarea unei adrese.
+
+- se aloca variabila dinamica prin operatorul NEW aplicat asupra unui tip(int, float, etc), iar rezultatul este atribuit variabilei ptr. In urma acestor operatii variabila ptr retine adresa variabilei alocate dinamic.
+
+- Orice acces la variabila alocata dinamic se face prin intermediul variabilei ptr.
+
+
+In C++, pentru alocarea dinamica se utilizeaza urmatorii operatori:
+
+
+-> Operatorul new aloca spatiu in HEAP pentru o variabila dinamica. Dupa alocare, adresa variabilei se atribuie lui ptr, unde ptr este o variabila de tip pointer catre TIP(int,float, etc)
+-> numarul de octeti alocati in HEAP este, evident, egal cu numarul de octeti ocupat  de o variabila de tipul respectiv.
+
+exemple:
+
+new int
+new float
+new Person
+
+-> durata de viata a unei variabile alocate in HEAP este pana la eliberarea spatiului ocupat sau pana la sfarsitul executarii programului.
+
+-> Operatorul DELETE elibereaza spatiul rezervat pentru variabila a carei adrese este retinuta in ptr.
+
+delete ptr
+
+
+Exemple:
+
+Variabile de tip pointer catre variabile de tip int. 
+
+//declaram o variabila de tip pointer
+int *adr;
+
+adr = new int;//alocam spatiu in HEAP pentru variabila de tip int
+
+*adr = 100;//variabila alocata retine valoarea 100
+
+cout<<*adr;//tiparim continutul variabilei
+
+delete adr;//eliberam spatiul.
+
+
+
+

@@ -1,0 +1,55 @@
+Labirintul este codificat printr-o matrice
+
+cu valori de la 0 la 15.
+
+   16 16 16 16
+16 15 11 10 14 16
+16 11 12 11 12 16
+16 11 6 15  7  16
+   16 16 16 16
+15, 11, 12, 11, 15, 7
+
+15 = 1111 (nord, est, sud, vest)
+11 = 1011 (nord, perete, sud, vest)
+10 = 1010 (nord, est, sud, vest)
+14 = 1110 (nord, est, sud, vest)
+12 = 1100 (nord, est, sud, vest)
+6 = 0110 (nord, est, sud, vest)
+7 = 0111 (nord, est, sud, vest)
+
+void back(int k, int line, int col) {
+
+    if(labirint[line][col] == 16 tipareste_solutia();
+
+    else {
+
+         stack[k][0] = 0;
+         stack[k][1] = line
+         stack[k][2] = col
+
+         while(stack[k][0] < 4) {
+          stack[k][0]++;
+          switch(stack[k][0]) {
+
+              case 1: if(labirint[line][col] & 8(1000))
+                      back(k+1,line-1,col);break
+              case 2: labirint[line][col] & 4
+              case 3: labirint[line][col] & 2
+              case 4: labirint[line][col] & 1
+          }
+         }
+    }
+}
+
+//8 = 1000
+//4 = 0100
+
+15 11 10 14
+11 12 11 12
+11 6 15  7
+
+
+//6 = 0110
+//7 = 0111
+//2 = 0010
+//1 = 0001

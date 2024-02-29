@@ -18,8 +18,6 @@ int main(int argc, char const *argv[])
 {
 
 	char text1[100], text2[100];
-
-
     //textul de copiat in text1 si text2
 	char mess[] = "Hello, I am working in c++ programming language!";
 

@@ -17,5 +17,5 @@ Proprietatile algoritmului:
 3. Determinism - in orice moment trebuie sa cunoastem pasul urmator.
 4. Generalitatea - algoritmul este aplicabil unei clase intregi de probleme.
 5. Eficienta - furnizarea solutiei trebuie sa fie realizabila prin consumul eficient al resurselor (spatiu / timp).
-6. Ginitudinea - pentru orice set de date de intrare posibile ale problemei, solutia este furnizata intr-un numar finit de pasi.
-7- Corectitudinea - datelor de iesire (a rezultatelor) in raport cu datele de intrare (input).
+6. Finitudinea - pentru orice set de date de intrare posibile ale problemei, solutia este furnizata intr-un numar finit de pasi.
+7. Corectitudinea - datelor de iesire (a rezultatelor) in raport cu datele de intrare (input).

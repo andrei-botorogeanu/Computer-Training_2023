@@ -32,5 +32,4 @@ int main()
 	Complex z;
 	cin>>z;
 	cout<<z;
-
 }

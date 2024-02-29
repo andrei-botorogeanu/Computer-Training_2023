@@ -1,9 +1,7 @@
 #include <iostream>
 
 void search(int val, int *adr1, int *adr2) {
-
-*adr1 = *adr1 + 1;
-
+	*adr1 = *adr1 + 1;
 }
 
 int *z2;
@@ -27,8 +25,7 @@ int main(int argc, char const *argv[])
 	//    valoare, adresa a, adresa b
 	
 	std::cout<<a;
-
-	std::cout<<"Variabila a este caracterizata de: tip, adresa si valoare"<<&a<<""<<a;
+	std::cout<<" Variabila a este caracterizata de: tip, adresa si valoare "<<&a<<" "<<a;
 
 	return 0;
 }

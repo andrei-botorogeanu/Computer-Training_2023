@@ -5,6 +5,7 @@ struct Node {
    int data;
    struct Node *next;
 } *head =nullptr;
+
 void CreateList(int value)
 {
    if(head==nullptr){

@@ -1,0 +1,51 @@
+Complexitatea algoritmilor:
+---------------------------
+Fiind dat un anumit algoritm, se pune problema sa gasim un indicator care sa exprime complexitatea sa. Acest indicator va face abstractie de calculatorul pe care ruleaza programul obtinut in urma cuatificarii algoritmului intr-un limbaj de programare, face abstractie de limbajul de programare ales. Altfel spus, indicatorul va exprima complexitatea unui algoritm care poate fi redactat in 
+pseudocod, schema logica sau limbaj de programare.
+
+->> Presupunem ca algoritmul are n date de intrare si acestea urmeaza sa fie prelucrate. Indicatorul
+care exprima complexitatea va tine cont de acest numar.
+
+Exemple:
+a)Se cere sa se calculeze valoarea maxima a unui sir de n numere reale
+b)Sa se determine daca n numere reale sunt distincte. Se va compara primul numar cu toate celelalte, al doilea cu celel care urmeaza...
+
+a) pentru a calcula valoarea maxima a unui sir de n numere reale se efectueaza 
+
+sirul: 1 2 3 4: n-1 comparatii ( O(n) )
+
+b) pentru a determina, daca n numere sunt distincte efectual
+
+(n-1) + (n-2) + ... n(n-1)/2 comparatii (O(n^2))
+
+Exprimarea complexitatii unui algoritm se face aproximativ
+
+pentru Sortarea a unui sir de numere reale folosim complexitate O(n^2)
+
+Pentru generarea permutarilor: Avem complexitate exponentiala O(a^n)
+
+
+1+2+3+4+....+n = n(n+1)/2
+
+Polinom = 2n + 5n^2 + 10n^3
+format din mai multe monoame
+
+avem complexitate polinomiala.
+
+n^3
+for
+  for
+    for
+
+    for(int i = 1; i <= 10; ++i) 
+      for(int j = 1; j <= 10; ++j)
+        for(int k = 1; k <= 100;++k)
+
+        O(n^3)
+
+
+Algoritmii de complexitate O(n) se mai numesc algoritmi liniari
+
+Algoritmii care au complexitate exponentiala au forma O(a^n)
+
+Ex: Sa se genereze toate submultimile unei multimi => O(2^n) 

@@ -4,7 +4,6 @@ int increment2(int adr) {
 
    int x = adr;
    
-
    return  x + 1;
 
 }	

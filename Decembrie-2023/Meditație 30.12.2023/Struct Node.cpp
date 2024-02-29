@@ -8,7 +8,9 @@ struct Node{
 struct Node *evenHead = new Node;
 struct Node *evenHead2 = new Node;
 
-Evenhead este un pointer catre struct Node, iar cu new nOde se aloca spatiu in zona HEAP pt o structura sruct Node si adresa de inceput a structurii este pasata pointer-ului evenHead care este declarat in segmentul de data.
+Evenhead este un pointer catre struct Node, iar cu new Node se aloca spatiu in zona HEAP 
+pt o structura struct Node si adresa de inceput a structurii este pasata pointer-ului 
+evenHead care este declarat in segmentul de data.
 
 
 { camp1, camp2, *next } ->> locatie(evenHead)
@@ -32,6 +34,6 @@ struct Node *list1 = list1
 list2 = list1
 list1->info = 10
 list1->info2 = 20
-....
+......
 list1->info = 1000 
  

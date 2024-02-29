@@ -4,29 +4,29 @@ using namespace std;
 
 class Complex
 {
-    // i - partea imaginara, r - partea reala
+    // i - partea imaginară, r - partea reală
 public:
     int i, r;
 public:
-    // constructor stabileste valoarea partii reale si a celei imaginare
+    // constructor stabilește valoarea parții reale și a celei imaginare
     Complex(int pr, int pi);
-    // constructor creeaza numarul complex nul
+    // constructor creează numarul complex nul
     Complex();
 // Avem doi constructori
-    // seteaza valorile partii reale si a celei imaginare
+    // setează valorile părții reale și a celei imaginare
     void set(int, int);
     double modul();
     int real();
     int imag();
-// Avem 4 operatori supraincarcati si 4 metode membre
-    //supraincarcare operator pentru afisarea numarului complex
+// Avem 4 operatori supraîncarcați și 4 metode membre
+    //supraîncărcare operator pentru afișarea numărului complex
     friend ostream& operator<<(ostream&, const Complex& );
     Complex operator +(Complex& );
     Complex operator -(Complex );
     Complex operator *(Complex );
 };
-/*name_class operatorrezolutie name_constructor(arg.)
-  name_constructor treb. sa aiba acelasi nume cu clasa
+/*name_class operator rezoluție name_constructor(arg.)
+  name_constructor trebuie sa aibă același nume cu clasa
 */
 
 Complex::Complex(int pr, int pi)
