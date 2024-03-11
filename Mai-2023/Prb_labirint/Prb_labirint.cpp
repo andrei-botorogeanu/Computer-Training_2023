@@ -1,5 +1,5 @@
 // Problema labirintului
-// Aici input-ul trebuie codat a.i. sa existe iesire din labirint
+// Aici input-ul trebuie codat a.i. să existe ieșire din labirint
 
 #include <iostream>
 using namespace std;
@@ -29,16 +29,16 @@ void backtracking(int line, int column, int level)
         switch (i)
         {
         case 1:
-            if( mat[line][column] & 8 && !explored(level, line-1, column) )
+/*N*/       if( mat[line][column] & 8 && !explored(level, line-1, column) )
                 { backtracking(line - 1, column, level+1 ); break; }
         case 2:
-            if( mat[line][column] & 4 && !explored(level, line, column+1) )
+/*E*/       if( mat[line][column] & 4 && !explored(level, line, column+1) )
                 { backtracking( line, column+1, level+1 ); break; }
         case 3:
-            if( mat[line][column] & 2 && !explored(level, line+1, column) )
+/*S*/       if( mat[line][column] & 2 && !explored(level, line+1, column) )
                 { backtracking( line+1, column, level+1 ); break; }
         case 4:
-            if( mat[line][column] & 1 && !explored(level, line, column-1) )
+/*V*/       if( mat[line][column] & 1 && !explored(level, line, column-1) )
                 { backtracking( line, column-1, level+1 ); break; }
         }
     }

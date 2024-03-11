@@ -18,7 +18,7 @@ def main():
 
     # am creat o instanta a obiectului Obiect
     un_obiect = Obiect(10, 260)
-    #un_obiect are greautate 10 si valoarea 260
+    #un_obiect are greutatea 10 si valoarea 260
   
     print("Greutate = ", un_obiect.weight)
     print("Valoare = ", un_obiect.value)
@@ -98,5 +98,5 @@ for i in range(1001):
     inaltime = input("inaltime=")
     greutate = input("Greutate=")
     culoare_ochi = input("Ochi=")
-    arr[i] = Om(inaltime,culoare_ochi,gretate);
+    arr[i] = Om(inaltime, culoare_ochi,gretate);
     

@@ -9,7 +9,7 @@ int strlen( string str )
 	}
 	return i;
 }
-int search( string str,int *lMAX )
+int search( string str, int *lMAX )
 {
 	int i=0, i_curent=0, iMAX;
 	int n = strlen( str );

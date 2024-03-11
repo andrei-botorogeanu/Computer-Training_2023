@@ -49,7 +49,7 @@ def main():
 	print(z1)
 	print(z2)
 	print("Suma nr. complexe este: ",z3)
-	print("Modulul nr ",z1,"este ",round(z1.module(),3) )
+	print("Modulul nr ",z1,"este ",round( z1.module(),3) )
 	z5 = z1-z2
 	print("Diferenta nr. complexe este: ",z5)
 	z6 = z1/z2

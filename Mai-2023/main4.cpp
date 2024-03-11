@@ -2,13 +2,17 @@
 using namespace std;
 
 int v[1001],n,k,s;
-void ini(){
-    if(k==1) v[k]=0;
-    else v[k]=v[k-1]-1;
+void ini() {
+    if(k==1) 
+        v[k] = 0;
+    else 
+        v[k] = v[k-1]-1;
 }
 int val(){
-    if( v[k]+s <= n ) { s=s+v[k];
-    return 1; }
+    if( v[k]+s <= n ) { 
+        s=s+v[k];
+        return 1; 
+    }
     return 0;
 }
 void tip(){
@@ -32,8 +36,7 @@ void BC(){
         int h=1, v=0;
         while(h==1 && !v){
             h=suc();
-            if(h==1) v=val();
-            
+            if(h==1) v=val();  
         }
         if(h==1) {
             if(sol()) tip();
