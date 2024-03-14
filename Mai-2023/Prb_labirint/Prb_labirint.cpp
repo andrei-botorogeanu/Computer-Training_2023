@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 int stack[100][3], level;
-int mat[10][10],n,m;
+int mat[10][10], n, m;
 int explored(int level, int r, int c)
 {
     for(int i = 1; i <= level-1; i++)
@@ -54,6 +54,7 @@ int main()
     mat[0][m+1]=16;
     mat[n+1][m+1]=16;
     mat[n+1][0]=16;
+    
     for(int i=1; i<=m; i++)
     {
         mat[0][i]=16;
